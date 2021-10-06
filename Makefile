@@ -4,27 +4,26 @@ NAME = so_long
 
 CC = clang
 
-FLAGS = -Wall  -Wextra -lm  $(INCLUDE)
+FLAGS = -Wall -Wextra -lm  $(INCLUDE)
 
 SOURCE = ./source/
 
 SRC = $(addprefix $(SOURCE), \
-	main.c window.c \
+	main.c window.c key.c \
 )
 
 INCLUDE = -I ./includes
 
-LIB_FLAGS = -L ./libft -lft -L ./mlx -lmlx -lXext -lX11
+LIB_FLAGS = ./libft/libft.a -L ./mlx -lmlx -lXext -lX11
 
-OBJ := $(SRC:%.c=%.o)
+OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	make all -C ./mlx
 	make all -C ./libft
-	$(CC) -g3 -fsanitize=address $(FLAGS) -o $(NAME) $(SRC) $(LIB)
-	rm $(OBJ)
+	$(CC) -g3 -fsanitize=address $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
 #skiperror:
 #	gcc -o $(NAME) $(SRC) -g $(LIB)
@@ -60,3 +59,7 @@ push:
 	git add .
 	git commit -m "updated"
 	git push
+
+fim: $(OBJ)
+	$(CC) -g3 -fsanitize=address $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
+	./so_long
