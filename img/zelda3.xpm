@@ -187,7 +187,7 @@ static char *zelda3[] = {
 "}. c #C8DAEC",
 "|. c #E7E6E5",
 " X c #F4F4F4",
-".X c #NONE",
+".X c #none",
 "XX c #F9F7F6",
 /* pixels */
 ".X.X.X.X.X.X.X.X.X.X.Xx.+ W W W W !   /..X.X.X.X.X.X.X.X.X.X.X.X",

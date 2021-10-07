@@ -1,36 +1,28 @@
 #ifndef SO_UTILS_H
 # define SO_UTILS_H
 
-typedef struct	s_vector
+typedef struct	s_img
 {
-	int	x;
-	int	y;
-}				t_vector;
+	void	*ptr;
+	char	*pixels;
+	int		bits_per_pixel;
+	int		line_size;
+	int		endian;
+	int		x;
+	int		y;
+}				t_img;
 
-typedef struct	s_image
-{
-	void      *pointer;
-	t_vector  vector;
-	char      *pixels;
-	int       bits_per_pixel;
-	int       line_size;
-	int       endian;
-}   t_image;
+//Estrutura geral
 
-typedef struct s_game
+typedef struct	s_game
 {
-	void	*mlx;
+	void	*mlx_pointer;
 	void	*window_pointer;
 	char	*map;
-	int		keycode;
-	int     up, down, left, right;
-	t_image	img;
-	t_vector  vector;
+	t_img	character;
+	t_img	floor;
+	t_img	wall;
 }	t_game;
-
-
-
-
 
 #define	UP          119
 #define	DOWN        115

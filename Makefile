@@ -9,14 +9,14 @@ FLAGS = -Wall -Wextra -lm  $(INCLUDE)
 SOURCE = ./source/
 
 SRC = $(addprefix $(SOURCE), \
-	main.c window.c key.c \
+	main.c window.c key.c images.c map.c \
 )
+
+OBJ = $(SRC:%.c=%.o)
 
 INCLUDE = -I ./includes
 
 LIB_FLAGS = ./libft/libft.a -L ./mlx -lmlx -lXext -lX11
-
-OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
@@ -26,8 +26,7 @@ $(NAME): $(OBJ)
 	$(CC) -g3 -fsanitize=address $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
 #skiperror:
-#	gcc -o $(NAME) $(SRC) -g $(LIB)
-
+#	gcc -o $(NAME) $(SRC) -g $(LIB) () ()
 clean:
 	rm -rf $(OBJ)
 	rm -rf ./a.out
@@ -63,3 +62,5 @@ push:
 fim: $(OBJ)
 	$(CC) -g3 -fsanitize=address $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 	./so_long
+
+.PHONY: all clean fclean re tri square push fim
