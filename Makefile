@@ -1,15 +1,22 @@
 #EXTRA_PATH_METADATA = {'so_long/.mlx': {'path': '.mlx'}}
 
-NAME = so_long
+NAME =	so_long
 
-CC = clang
+CC =	clang
 
-FLAGS = -Wall -Wextra -lm  $(INCLUDE)
+FLAGS =	-Wall -Wextra -lm  $(INCLUDE) 
 
-SOURCE = ./source/
+SOURCE =./source/
 
-SRC = $(addprefix $(SOURCE), \
-	main.c window.c key.c images.c map.c \
+MOVE =	mov/
+
+MSRC =	$(addprefix $(MOVE), \
+		mov_left.c mov_right.c mov_up.c mov_down.c \
+)
+
+SRC =	$(addprefix $(SOURCE), \
+		$(MSRC) \
+		main.c window.c key.c images.c map.c \
 )
 
 OBJ = $(SRC:%.c=%.o)
@@ -46,12 +53,12 @@ clang:
 
 tri:
 	rm -rf ./a.out
-	$(CC) $(FLAGS)  triangulo.c ./mlx/libmlx_Linux.a ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
+	$(CC) $(FLAGS)  ./extra/triangulo.c ./mlx/libmlx_Linux.a ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
 	./a.out
 
 square:
 	rm -rf ./a.out
-	$(CC) $(FLAGS)  quadrado.c ./mlx/libmlx_Linux.a ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
+	$(CC) $(FLAGS)  ./extra/quadrado.c ./mlx/libmlx_Linux.a ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
 	./a.out
 
 push:
