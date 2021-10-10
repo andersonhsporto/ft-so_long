@@ -2,39 +2,43 @@
 
 void	map_maker(t_game	*game)
 {
-	int i;
+	int	y;
+	int	x;
 
-	i = 0;
-	while(game->map[i])
+	y = 0;
+	while (game->plot.map[y])
 	{
-		if (game->map[i][i] == '1') //alterar [] []
-			mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->floor.ptr,  (50 * i), 0);
-		else
-			mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->wall.ptr,  (50 * i), 0);
-		i++;
+		x = 0;
+		while (game->plot.map[y][x])
+		{
+			if (game->plot.map[y][x] == '1') //alterar [] []
+			mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->floor.ptr,  (50 * x), (50 * y));
+			else
+			mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->wall.ptr,  (50 * x), (50 * y));
+			x++;
+		}
+		y++;
 	}
 	return ;
 }
 
 void	init_map(t_game *game, char *path)
 {
-	t_draw	plot;
-	int		fd;
+	int	fd;
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
 		return ; //verificar depois
-	plot.temp = ft_strdup("");
-	while ((plot.line = get_next_line(fd)))
+	game->plot.temp = ft_strdup("");
+	while ((game->plot.line = get_next_line(fd)))
 	{
-		if (!plot.line)
+		if (!game->plot.line)
 			break ;
-		plot.temp = gnl_strjoin(plot.temp, plot.line);
-		free(plot.line);
+		game->plot.temp = gnl_strjoin(game->plot.temp, game->plot.line);
+		free(game->plot.line);
 	}
-	game->map = ft_split(plot.temp, '\n');
-	free(plot.temp);
+	game->plot.map = ft_split(game->plot.temp, '\n');
+	free(game->plot.temp);
 	close(fd);
 	return ;
 }
-
