@@ -22,8 +22,12 @@ all:	$(NAME)
 $(NAME):	$(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
+bonus: $(NAME)
+	$(CC) $(CFLAGS) -c $(BONUS_SRC)
+	ar -rcs $(NAME) $(BONUS_OBJ)
+
 clean:
-	rm -rf $(OBJ) $(BONUS_SRC)
+	rm -rf $(OBJ) $(BONUS_OBJ)
 	rm -rf ./a.out
 
 fclean:	clean

@@ -25,3 +25,19 @@ t_img	ft_new_sprite(void *mlx, char *path)
 			&img.bits_per_pixel, &img.line_size, &img.endian);
 	return (img);
 }
+
+void	free_image(t_game *game)
+{
+	free (game->wall.ptr);
+	free (game->floor.ptr);
+	free (game->character.ptr);
+	free (game->character_d2.ptr);
+	free (game->character_l.ptr);
+	free (game->character_l2.ptr);
+	free (game->character_l3.ptr);
+	free (game->character_r.ptr);
+	free (game->character_r2.ptr);
+	free (game->character_u.ptr);
+	free (game->character_u2.ptr);
+	return ;
+}

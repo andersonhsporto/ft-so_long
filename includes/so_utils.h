@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/09 01:32:36 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/10 00:05:12 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_game
 {
 	void	*mlx_pointer;
 	void	*window_pointer;
-	char	*map;
+	char	**map;
 	t_img	character;
 	t_img	character_d2;
 	t_img	character_l;
@@ -42,6 +42,14 @@ typedef struct s_game
 	t_img	floor;
 	t_img	wall;
 }	t_game;
+
+typedef struct s_draw
+{
+	char	*line;
+	char	*temp;
+}	t_draw;
+
+
 
 # define UP          119
 # define DOWN        115

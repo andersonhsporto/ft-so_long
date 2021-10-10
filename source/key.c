@@ -7,6 +7,7 @@ int	key_check(int keycode, t_game *parameter)
 	if (keycode == ESC)
 	{
 		mlx_destroy_window(parameter->mlx_pointer, parameter->window_pointer);
+		free_image(parameter);
 		exit(0);
 	}
 	if (keycode == LEFT)

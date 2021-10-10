@@ -2,35 +2,41 @@
 
 NAME =	so_long
 
-CC =	clang
+CC 	 =	clang
 
-FLAGS =	-Wall -Wextra -lm  $(INCLUDE) 
+FLAGS =	-Wall -Wextra -lm $(INCLUDE)
 
 SOURCE =./source/
-
 MOVE =	mov/
+GNL = 	gnl/
+
+GNSRC = $(addprefix $(GNL), \
+		get_next_line_bonus.c get_next_line_utils_bonus.c \
+)
 
 MSRC =	$(addprefix $(MOVE), \
 		mov_left.c mov_right.c mov_up.c mov_down.c \
 )
 
-SRC =	$(addprefix $(SOURCE), \
+A_SRC =	$(addprefix $(SOURCE), \
 		$(MSRC) \
 		main.c window.c key.c images.c map.c \
 )
 
-OBJ = $(SRC:%.c=%.o)
+SRC = $(A_SRC) $(GNSRC)
 
-INCLUDE = -I ./includes
+OBJ =	$(SRC:%.c=%.o)
 
-LIB_FLAGS = ./libft/libft.a -L ./mlx -lmlx -lXext -lX11
+INCLUDE =	-I ./includes
+
+LIB_FLAGS =	./libft/libft.a -L ./mlx -lmlx -lXext -lX11
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	make all -C ./mlx
-	make all -C ./libft
-	$(CC) -g3 -fsanitize=address $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
+	make bonus -C ./libft
+	$(CC) -g3 $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
 #skiperror:
 #	gcc -o $(NAME) $(SRC) -g $(LIB) () ()
@@ -70,4 +76,9 @@ fim: $(OBJ)
 	$(CC) -g3 -fsanitize=address $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 	./so_long
 
-.PHONY: all clean fclean re tri square push fim
+.PHONY: all clean fclean re tri square push fim c
+
+c:
+	rm -rf ./a.out
+	$(CC) $(FLAGS)  $(SRC) ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
+	./a.out ./teste.txt
