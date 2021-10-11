@@ -7,10 +7,10 @@ void init_images(t_game	*game)
 	game->character = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/down_1__.xpm");
 	game->character_d2 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/down_3__.xpm");
 	game->character_l = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/left_1__.xpm");
-	game->character_l2 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/left_2__.xpm");
-	game->character_l3 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/left_2__.xpm");
+	game->character_l2 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/left_new32.xpm");
+	game->character_l3 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/left_2__.xpm"); //extra
 	game->character_r = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/right_1__.xpm");
-	game->character_r2 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/right_2__.xpm");
+	game->character_r2 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/right_new32.xpm");
 	game->character_u = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/up_1__.xpm");
 	game->character_u2 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/up_2__.xpm");
 	return ;

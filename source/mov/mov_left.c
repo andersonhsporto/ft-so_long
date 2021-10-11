@@ -1,5 +1,12 @@
 #include "../../includes/so_long.h"
 
+static void	check_left(t_game *parameter)
+{
+	if ((parameter->character.x > 26))
+		parameter->character.x -= 2;
+	return ;
+}
+
 static void	print_left(t_game *parameter, int image_number)
 {
 	void	*image;
@@ -8,8 +15,7 @@ static void	print_left(t_game *parameter, int image_number)
 		image = parameter->character_l.ptr;
 	if (image_number == 2)
 		image = parameter->character_l2.ptr;
-	if (!(parameter->character.x < 0))
-		parameter->character.x -= 2;
+	check_left(parameter);
 	map_maker(parameter);
 	mlx_put_image_to_window(parameter->mlx_pointer, parameter->window_pointer,
 		image, parameter->character.x, parameter->character.y);
