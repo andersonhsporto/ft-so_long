@@ -29,12 +29,11 @@ OBJ =	$(SRC:%.c=%.o)
 
 INCLUDE =	-I ./includes
 
-LIB_FLAGS =	./libft/libft.a -L ./mlx -lmlx -lXext -lX11
+LIB_FLAGS =	./libft/libft.a -lmlx -lXext -lX11
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	make all -C ./mlx
 	make bonus -C ./libft
 	$(CC) -g3 $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
@@ -47,7 +46,6 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	make clean -C ./mlx
 	make fclean -C ./libft
 
 re: fclean all
@@ -64,7 +62,7 @@ tri:
 
 square:
 	rm -rf ./a.out
-	$(CC) $(FLAGS)  ./extra/quadrado.c ./mlx/libmlx_Linux.a ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
+	$(CC) $(FLAGS)  ./extra/quadrado.c $(LIB_FLAGS) ./libft/libft.a
 	./a.out
 
 push:
@@ -80,5 +78,5 @@ fim: $(OBJ)
 
 c:
 	rm -rf ./a.out
-	$(CC) $(FLAGS)  $(SRC) ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
+	$(CC) $(FLAGS)  $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	./a.out ./teste.txt
