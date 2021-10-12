@@ -1,28 +1,31 @@
 #include "../../includes/so_long.h"
 
-static void	check_left(t_game *parameter)
+static void	check_left(t_game *game)
 {
-	if ((parameter->character.x > 26))
-		parameter->character.x -= 2;
+	if ((game->character.x > 26))
+	{
+		game->character.x -= 2;
+		print_moves(game);
+	}
 	return ;
 }
 
-static void	print_left(t_game *parameter, int image_number)
+static void	print_left(t_game *game, int image_number)
 {
 	void	*image;
 
 	if (image_number == 1)
-		image = parameter->character_l.ptr;
+		image = game->character_l.ptr;
 	if (image_number == 2)
-		image = parameter->character_l2.ptr;
-	check_left(parameter);
-	map_maker(parameter);
-	mlx_put_image_to_window(parameter->mlx_pointer, parameter->window_pointer,
-		image, parameter->character.x, parameter->character.y);
+		image = game->character_l2.ptr;
+	check_left(game);
+	map_maker(game);
+	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+		image, game->character.x, game->character.y);
 	return ;
 }
 
-void	move_left(t_game *parameter)
+void	move_left(t_game *game)
 {
 	static int i;
 
@@ -30,12 +33,12 @@ void	move_left(t_game *parameter)
 		i = 0;
 	if (i == 3)
 	{
-		print_left(parameter, 1);
+		print_left(game, 1);
 		i = 0;
 	}
 	else
 	{
-		print_left(parameter, 2);
+		print_left(game, 2);
 		i++;
 	}
 	return ;

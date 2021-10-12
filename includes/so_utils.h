@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/11 00:21:05 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/12 00:30:39 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_img
 	int		endian;
 	int		x;
 	int		y;
+	int		m;
 }	t_img;
 
 typedef struct s_draw
@@ -50,6 +51,7 @@ typedef struct s_game
 	t_img	character_u2;
 	t_img	floor;
 	t_img	wall;
+	t_img	collect;
 }	t_game;
 
 # define UP          119

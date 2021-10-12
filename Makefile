@@ -4,7 +4,7 @@ NAME =	so_long
 
 CC 	 =	clang
 
-FLAGS =	-Wall -Wextra -lm $(INCLUDE)
+FLAGS =	-Wall -Wextra -Werror -lm    $(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -15,12 +15,13 @@ GNSRC = $(addprefix $(GNL), \
 )
 
 MSRC =	$(addprefix $(MOVE), \
-		mov_left.c mov_right.c mov_up.c mov_down.c \
+		mov_left.c mov_right.c mov_up.c mov_down.c mov_utils.c \
 )
 
 A_SRC =	$(addprefix $(SOURCE), \
 		$(MSRC) \
 		main.c window.c key.c images.c map.c \
+		map_update.c \
 )
 
 SRC = $(A_SRC) $(GNSRC)
@@ -78,5 +79,5 @@ fim: $(OBJ)
 
 c:
 	rm -rf ./a.out
-	$(CC) $(FLAGS)  $(SRC) $(LIB_FLAGS) ./libft/libft.a
+	$(CC) $(FLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	./a.out ./teste.txt

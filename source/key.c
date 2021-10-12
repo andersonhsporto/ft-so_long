@@ -2,14 +2,13 @@
 
 int	key_check(int keycode, t_game *parameter)
 {
-	static int	i;
-
 	if (keycode == ESC)
 	{
 		mlx_destroy_window(parameter->mlx_pointer, parameter->window_pointer);
 		free_image(parameter);
 		exit(0);
 	}
+
 	if (keycode == LEFT)
 		move_left(parameter);
 	if (keycode == RIGHT)
@@ -18,6 +17,6 @@ int	key_check(int keycode, t_game *parameter)
 		move_up(parameter);
 	if (keycode == DOWN)
 		move_down(parameter);
-	printf("%d\n", ++i);
+	//printf("y = %i x = %i\n", parameter->character.y, parameter->character.x);
 	return (0);
 }
