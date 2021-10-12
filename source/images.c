@@ -4,6 +4,7 @@ void init_images(t_game	*game)
 {
 	game->wall = ft_new_sprite(game->mlx_pointer, "./img/tree50.xpm");
 	game->floor = ft_new_sprite(game->mlx_pointer, "./img/c50.xpm");
+	game->collect = ft_new_sprite(game->mlx_pointer, "./img/potion.xpm");
 	game->character = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/down_1__.xpm");
 	game->character_d2 = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/down_3__.xpm");
 	game->character_l = ft_new_sprite(game->mlx_pointer, "./img/link_sprites/left_1__.xpm");
@@ -28,7 +29,7 @@ t_img	ft_new_sprite(void *mlx, char *path)
 
 void	free_image(t_game *game)
 {
-	free (game->wall.ptr);
+	mlx_destroy_image(game->mlx_pointer, game->wall.ptr);
 	free (game->floor.ptr);
 	free (game->character.ptr);
 	free (game->character_d2.ptr);
