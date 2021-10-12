@@ -1,5 +1,3 @@
-#EXTRA_PATH_METADATA = {'so_long/.mlx': {'path': '.mlx'}}
-
 NAME =	so_long
 
 CC 	 =	clang
@@ -51,33 +49,16 @@ fclean: clean
 
 re: fclean all
 
-clang:
-	rm -rf ./a.out
-	$(CC) $(FLAGS)  $(SRC) ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
-	./a.out
-
-tri:
-	rm -rf ./a.out
-	$(CC) $(FLAGS)  ./extra/triangulo.c ./mlx/libmlx_Linux.a ./mlx/libmlx.a $(LIB_FLAGS) ./libft/libft.a
-	./a.out
-
-square:
-	rm -rf ./a.out
-	$(CC) $(FLAGS)  ./extra/quadrado.c $(LIB_FLAGS) ./libft/libft.a
-	./a.out
-
 push:
 	git add .
 	git commit -m "updated"
 	git push
 
-fim: $(OBJ)
-	$(CC) -g3 -fsanitize=address $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
-	./so_long
-
-.PHONY: all clean fclean re tri square push fim c
+.PHONY: all clean fclean re push c
 
 c:
 	rm -rf ./a.out
 	$(CC) $(FLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	./a.out ./teste.txt
+
+clang: c
