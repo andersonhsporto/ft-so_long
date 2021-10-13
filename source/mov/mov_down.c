@@ -4,8 +4,12 @@ static void	check_down(t_game *game)
 {
 	if (game->character.y < ((game->plot.height * 32) - 64))
 	{
-		game->character.y += 2;
-		print_moves(game);
+		if (!(game->plot.map[((game->character.y + 32)
+						/ 32)][(game->character.x / 32)] == '1'))
+		{
+			game->character.y += 32;
+			print_moves(game);
+		}
 	}
 	return ;
 }
@@ -27,7 +31,7 @@ static void	print_down(t_game *game, int image_number)
 
 void	move_down(t_game *game)
 {
-	static int i;
+	static int	i;
 
 	if (!i)
 		i = 0;

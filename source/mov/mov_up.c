@@ -4,8 +4,12 @@ static void	check_up(t_game *game)
 {
 	if ((game->character.y > 32))
 	{
-		game->character.y -= 2;
-		print_moves(game);
+		if (!(game->plot.map[((game->character.y - 32)
+						/ 32)][(game->character.x / 32)] == '1'))
+		{
+			game->character.y -= 32;
+			print_moves(game);
+		}
 	}
 	return ;
 }

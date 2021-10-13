@@ -2,10 +2,14 @@
 
 static void	check_right(t_game *game)
 {
-	if (game->character.x < ((game->plot.length * 26) - 52))
+	if (game->character.x < ((game->plot.length * 32) - 64))
 	{
-		game->character.x += 2;
-		print_moves(game);
+		if (!(game->plot.map[(game->character.y / 32)]
+				[((game->character.x + 32) / 32)] == '1'))
+		{
+			game->character.x += 32;
+			print_moves(game);
+		}
 	}
 	return ;
 }
@@ -27,7 +31,7 @@ static void	print_right(t_game *game, int image_number)
 
 void	move_right(t_game *game)
 {
-	static int i;
+	static int	i;
 
 	if (!i)
 		i = 0;
