@@ -11,7 +11,7 @@ NAME = libft.a
 
 CC = clang
 
-CFLAGS = -Wall -Werror -Wextra -O3
+CFLAGS = -Wall -Werror -Wextra
 
 OBJ := $(SRC:%.c=%.o)
 

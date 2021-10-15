@@ -1,8 +1,10 @@
+#EXTRA_PATH_METADATA = {'so_long/.mlx': {'path': '.mlx'}}
+
 NAME =	so_long
 
 CC 	 =	clang
 
-FLAGS =	-Wall -Wextra -Werror -lm    $(INCLUDE)
+FLAGS =	-Wall -Wextra -Werror -lm -O2  $(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -30,14 +32,14 @@ INCLUDE =	-I ./includes
 
 LIB_FLAGS =	./libft/libft.a -lmlx -lXext -lX11
 
+.PHONY: all clean fclean re push c clang
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	make bonus -C ./libft
 	$(CC) -g3 $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
-#skiperror:
-#	gcc -o $(NAME) $(SRC) -g $(LIB) () ()
 clean:
 	rm -rf $(OBJ)
 	rm -rf ./a.out
@@ -54,11 +56,10 @@ push:
 	git commit -m "updated"
 	git push
 
-.PHONY: all clean fclean re push c
-
 c:
 	rm -rf ./a.out
 	$(CC) $(FLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
-	./a.out ./teste.txt
+	./a.out ./teste.ber
 
 clang: c
+

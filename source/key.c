@@ -5,10 +5,8 @@ int	key_check(int keycode, t_game *parameter)
 	if (keycode == ESC)
 	{
 		mlx_destroy_window(parameter->mlx_pointer, parameter->window_pointer);
-		free_image(parameter);
-		exit(0);
+		exit(1);
 	}
-
 	if (keycode == LEFT)
 		move_left(parameter);
 	if (keycode == RIGHT)

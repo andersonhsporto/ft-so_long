@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/12 16:01:03 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/14 21:23:48 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	map_maker(t_game	*game);
 void	init_map(t_game *game, char *path);
 
 int		key_check(int keycode, t_game *parameter);
-t_img	ft_new_sprite(void *mlx, char *path);
+t_img	new_sprite(void *mlx, char *path);
 
 void	move_right(t_game *parameter);
 void	move_left(t_game *parameter);
@@ -50,7 +50,10 @@ int		len_map(char **map);
 void	player_init(t_game	*game);
 
 void	update_map(t_game *game);
+int		check_arg(const char *argv);
 
 void	print_moves(t_game *game);
+
+t_counter	map_check_two(char *string_map, t_game *game);
 
 #endif

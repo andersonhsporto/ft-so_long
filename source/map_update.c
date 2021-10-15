@@ -1,6 +1,17 @@
 #include "../includes/so_long.h"
 
-void	update_map(t_game *game)
+int	check_arg(const char	*argv)
 {
-	printf("%c", game->plot.map[1][0]);
+	size_t	len;
+	char *	string;
+
+	len = 0;
+	if ((string = ft_strrchr(argv, '.')))
+	{
+		len = ft_strlen(string);
+		if (ft_memcmp(string, ".ber", len) == 0)
+			return(1);
+	}
+	return (0);
 }
+

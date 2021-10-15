@@ -8,42 +8,29 @@ static void	check_right(t_game *game)
 				[((game->character.x + 32) / 32)] == '1'))
 		{
 			game->character.x += 32;
+			map_maker(game);
 			print_moves(game);
 		}
 	}
 	return ;
 }
 
-static void	print_right(t_game *game, int image_number)
-{
-	void	*image;
-
-	if (image_number == 1)
-		image = game->character_r.ptr;
-	if (image_number == 2)
-		image = game->character_r2.ptr;
-	check_right(game);
-	map_maker(game);
-	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-		image, game->character.x, game->character.y);
-	return ;
-}
-
 void	move_right(t_game *game)
 {
-	static int	i;
-
-	if (!i)
-		i = 0;
-	if (i == 3)
+	if (game->i.collectible == 1 && (game->plot.map[(game->character.y / 32)]
+			[((game->character.x + 32) / 32)] == 'C'))
 	{
-		print_right(game, 1);
-		i = 0;
+		game->character.x += 32;
+		map_maker(game);
+		print_moves(game);
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->character_r.ptr, game->character.x, game->character.y);
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal.ptr, (game->portal.x), (game->portal.y));
+		return ;
 	}
-	else
-	{
-		print_right(game, 2);
-		i++;
-	}
+	check_right(game);
+	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+		game->character_r.ptr, game->character.x, game->character.y);
 	return ;
 }

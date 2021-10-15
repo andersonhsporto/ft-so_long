@@ -6,23 +6,32 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/12 00:30:39 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/15 00:28:53 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_UTILS_H
 # define SO_UTILS_H
 
+typedef struct s_counter
+{
+	int		empty;
+	int		collectible;
+	int		exit;
+	int		start;
+	int		movements;
+}	t_counter;
+
 typedef struct s_img
 {
 	void	*ptr;
-	char	*pixels;
+	int		*pixels;
 	int		bits_per_pixel;
 	int		line_size;
 	int		endian;
 	int		x;
 	int		y;
-	int		m;
+	int		movements;
 }	t_img;
 
 typedef struct s_draw
@@ -37,21 +46,18 @@ typedef struct s_draw
 //Estrutura geral
 typedef struct s_game
 {
-	void	*mlx_pointer;
-	void	*window_pointer;
-	t_draw	plot;
-	t_img	character;
-	t_img	character_d2;
-	t_img	character_l;
-	t_img	character_l2;
-	t_img	character_l3;
-	t_img	character_r;
-	t_img	character_r2;
-	t_img	character_u;
-	t_img	character_u2;
-	t_img	floor;
-	t_img	wall;
-	t_img	collect;
+	void		*mlx_pointer;
+	void		*window_pointer;
+	t_counter	i;
+	t_draw		plot;
+	t_img		character;
+	t_img		character_l;
+	t_img		character_r;
+	t_img		character_u;
+	t_img		floor;
+	t_img		wall;
+	t_img		collect;
+	t_img		portal;
 }	t_game;
 
 # define UP          119
