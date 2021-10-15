@@ -4,7 +4,7 @@ NAME =	so_long
 
 CC 	 =	clang
 
-FLAGS =	-Wall -Wextra -Werror -lm -O2  $(INCLUDE)
+FLAGS =	-Wall -Wextra -Werror -lm -g $(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -62,4 +62,9 @@ c:
 	./a.out ./teste.ber
 
 clang: c
+
+valgrind:
+	rm -rf ./a.out
+	$(CC) $(FLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
+	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./teste.ber
 

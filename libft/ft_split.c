@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 18:43:54 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/09 23:53:35 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:35:36 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	if (s == 0)
 		return (0);
-	array = malloc((ft_count(s, c) + 1) * sizeof(char *));
+	array = ft_calloc((ft_count(s, c) + 1), sizeof(char *));
 	if (array == 0)
 		return (0);
 	while (s[i] != '\0')

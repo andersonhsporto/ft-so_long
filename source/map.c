@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/15 00:10:00 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:34:20 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ void	init_map(t_game *game, char *path)
 	}
 	game->i = map_check_two(game->plot.temp, game);
 	game->plot.map = ft_split(game->plot.temp, '\n');
+	free(game->plot.temp);
 	game->plot.length = len_map(game->plot.map);
 	close(fd);
 	return ;
@@ -163,6 +164,7 @@ t_counter	map_check_two(char *string_map, t_game *game)
 	cnt.collectible = 0;
 	cnt.start = 0;
 	cnt.exit = 0;
+	cnt.movements = 0;
 	i = 0;
 	while (string_map[i] != '\0')
 	{

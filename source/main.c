@@ -4,7 +4,6 @@ int	main(int argc, char **argv)
 {
 	t_game	game;
 
-
 	if (argc == 2 && (check_arg(argv[1])))
 	{
 		init_map(&game, argv[1]);
@@ -18,18 +17,19 @@ int	main(int argc, char **argv)
 	}
 	if ((argc == 2 && !(check_arg(argv[1]))))
 	{
-		printf("Error\nCan't open file. The format is not supported!\n");
-		exit(1);
+		print_error("Can't open file. The format is not supported!", &game, 1);
 	}
 	if (argc > 2)
 	{
-		printf("Error\nCan't open multiple files!\n");
-		exit(1);
+		print_error("Can't open multiple files!", &game, 1);
+		//printf("Error\nCan't open multiple files!\n");
+		//exit(1);
 	}
 	else
 	{
-		printf("Error\nPlease specify file name!\n");
-		exit(1);
+		print_error("Please specify file name!", &game, 1);
+		//printf("Error\nPlease specify file name!\n");
+		//exit(1);
 	}
 	return (0);
 }

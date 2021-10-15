@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/14 21:23:48 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:42:40 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 
 void	init_images(t_game	*game);
-void	init_so_long(t_game *teste);
+void	init_so_long(t_game *game);
 
 void	map_maker(t_game	*game);
 void	init_map(t_game *game, char *path);
@@ -41,7 +41,7 @@ void	move_up(t_game *parameter);
 void	move_down(t_game *parameter);
 
 int		check_wall(t_game *parameter);
-void	free_image(t_game *game);
+void	destroy_image(t_game *game);
 
 void	init_map(t_game *game, char *path);
 
@@ -55,5 +55,9 @@ int		check_arg(const char *argv);
 void	print_moves(t_game *game);
 
 t_counter	map_check_two(char *string_map, t_game *game);
+
+void	print_error(char *message, t_game *game, int i);
+
+void	free_map(t_game	*game);
 
 #endif
