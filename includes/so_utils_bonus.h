@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_utils.h                                         :+:      :+:    :+:   */
+/*   so_utils_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 01:01:00 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/16 00:54:27 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ typedef struct s_img
 	void	*ptr;
 	int		*pixels;
 	int		bits_per_pixel;
-	int		line_size;
-	int		mem;
+	int		mem_po;
 	int		endian;
 	int		x;
 	int		y;
@@ -44,6 +43,7 @@ typedef struct s_draw
 	char	*temp;
 }	t_draw;
 
+//Estrutura geral
 typedef struct s_game
 {
 	void		*mlx_pointer;
@@ -65,5 +65,7 @@ typedef struct s_game
 # define LEFT        97
 # define RIGHT       100
 # define ESC         65307
+# define KEYPRESS    2
+# define KEYRELEASE  3
 
 #endif

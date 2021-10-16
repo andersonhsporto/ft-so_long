@@ -1,19 +1,18 @@
-#include "../../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
-int	key_check(int keycode, t_game *game)
+int	key_check(int keycode, t_game *parameter)
 {
-	game->character.mem = 0;
 	if (keycode == ESC)
-		endgame("", game, -1);
-		//destroy_image(game);
+		endgame("", parameter, -1);
+		//destroy_image(parameter);
 	if (keycode == LEFT)
-		move_left(game);
+		move_left(parameter);
 	if (keycode == RIGHT)
-		move_right(game);
+		move_right(parameter);
 	if (keycode == UP)
-		move_up(game);
+		move_up(parameter);
 	if (keycode == DOWN)
-		move_down(game);
+		move_down(parameter);
 	return (0);
 }
 

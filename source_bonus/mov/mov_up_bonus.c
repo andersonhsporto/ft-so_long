@@ -1,4 +1,4 @@
-#include "../../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
 static void	check_up(t_game *game)
 {
@@ -30,7 +30,6 @@ void	move_up(t_game *game)
 		return ;
 	}
 	check_up(game);
-	game->character.mem = 4;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 		game->character_u.ptr, game->character.x, game->character.y);
 	return ;

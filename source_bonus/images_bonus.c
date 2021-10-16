@@ -1,4 +1,4 @@
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 void	init_so_long(t_game *game)
 {
@@ -27,6 +27,8 @@ t_img	new_sprite(void *mlx, char *path)
 	t_img	img;
 
 	img.ptr = mlx_xpm_file_to_image(mlx, path, &img.x, &img.y);
+	img.pixels	= (int *)mlx_get_data_addr(img.ptr,
+			&img.bits_per_pixel, &img.line_size, &img.endian);
 	return (img);
 }
 

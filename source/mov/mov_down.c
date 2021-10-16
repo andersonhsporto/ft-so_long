@@ -30,6 +30,7 @@ void	move_down(t_game *game)
 		return ;
 	}
 	check_down(game);
+	game->character.mem = 1;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character.ptr, game->character.x, game->character.y);
 	return ;

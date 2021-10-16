@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 00:56:46 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/15 22:43:21 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 static void	check_map_maker(t_game *game, int y, int x)
 {
@@ -86,7 +86,6 @@ t_counter	start_counter(char *string_map, t_game *game, int i)
 	cnt.start = 0;
 	cnt.exit = 0;
 	cnt.movements = 0;
-	cnt.empty = 0;
 	while (string_map[i] != '\0')
 	{
 		if ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])))
@@ -97,12 +96,9 @@ t_counter	start_counter(char *string_map, t_game *game, int i)
 			cnt.exit++;
 		else if (string_map[i] == 'P')
 			cnt.start++;
-		else if (string_map[i] == '0')
-			cnt.empty++;
 		i++;
 	}
-	if (!(cnt.collectible > 0 && cnt.exit > 0 && cnt
-			.start == 1 && cnt.empty > 0))
+	if (!(cnt.collectible > 0 && cnt.exit > 0 && cnt.start == 1))
 		endgame("Invalid, file!", game, 1);
 	return (cnt);
 }

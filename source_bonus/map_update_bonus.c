@@ -1,4 +1,4 @@
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 void	player_init(t_game	*game)
 {

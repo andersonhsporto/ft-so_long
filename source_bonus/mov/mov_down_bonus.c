@@ -1,13 +1,13 @@
-#include "../../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
-static void	check_up(t_game *game)
+static void	check_down(t_game *game)
 {
-	if ((game->character.y > 32))
+	if (game->character.y < ((game->plot.height * 32) - 64))
 	{
-		if (!(game->plot.map[((game->character.y - 32)
+		if (!(game->plot.map[((game->character.y + 32)
 						/ 32)][(game->character.x / 32)] == '1'))
 		{
-			game->character.y -= 32;
+			game->character.y += 32;
 			map_maker(game);
 			print_moves(game);
 		}
@@ -15,23 +15,23 @@ static void	check_up(t_game *game)
 	return ;
 }
 
-void	move_up(t_game *game)
+void	move_down(t_game *game)
 {
-	if (game->i.collectible == 1 && (game->plot.map[((game->character.y - 32)
+	if (game->i.collectible == 1 && (game->plot.map[((game->character.y + 32)
 						/ 32)][(game->character.x / 32)] == 'C'))
 	{
-		game->character.y -= 32;
+		game->character.y += 32;
 		map_maker(game);
 		print_moves(game);
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character_u.ptr, game->character.x, game->character.y);
+			game->character.ptr, game->character.x, game->character.y);
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->portal.ptr, (game->portal.x), (game->portal.y));
 		return ;
 	}
-	check_up(game);
-	game->character.mem = 4;
+	check_down(game);
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-		game->character_u.ptr, game->character.x, game->character.y);
+			game->character.ptr, game->character.x, game->character.y);
 	return ;
 }
+
