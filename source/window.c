@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 01:21:49 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/16 20:14:42 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	red_cross(t_game *game)
 {
 	endgame("", game, -1);
-	return(0);
+	return (0);
 }
 
 int	mini_maker(t_game *game)
@@ -35,7 +35,7 @@ int	mini_maker(t_game *game)
 	if (game->character.mem == 4)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character_u.ptr, game->character.x, game->character.y);
-	return(0);
+	return (0);
 }
 
 void	endgame(char *message, t_game *game, int i)
@@ -55,14 +55,15 @@ void	endgame(char *message, t_game *game, int i)
 int	check_arg(const char	*argv)
 {
 	size_t	len;
-	char *	string;
+	char	*string;
 
 	len = 0;
-	if ((string = ft_strrchr(argv, '.')))
+	string = ft_strrchr(argv, '.');
+	if (string)
 	{
 		len = ft_strlen(string);
 		if (ft_memcmp(string, ".ber", len) == 0)
-			return(1);
+			return (1);
 	}
 	return (0);
 }

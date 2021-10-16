@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 01:01:00 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/16 20:06:38 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ typedef struct s_img
 {
 	void	*ptr;
 	int		*pixels;
-	int		bits_per_pixel;
 	int		line_size;
 	int		mem;
-	int		endian;
 	int		x;
 	int		y;
 	int		movements;

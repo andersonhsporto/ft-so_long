@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_update.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
+/*   Updated: 2021/10/16 20:11:41 by anhigo-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
 
 void	player_init(t_game	*game)
@@ -25,7 +37,6 @@ void	player_init(t_game	*game)
 	}
 	return ;
 }
-
 
 int	len_map(char **map, t_game *game)
 {

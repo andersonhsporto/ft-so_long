@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 00:56:46 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/16 20:15:32 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ static void	check_map_maker(t_game *game, int y, int x)
 	{
 		game->portal.x = x * 32;
 		game->portal.y = y * 32;
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal.ptr, (32 * x), (32 * y));
 	}
-	if (game->plot.map[y][x] == '1')
+	else if (game->plot.map[y][x] == '1')
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->wall.ptr, (32 * x), (32 * y));
 	else if (game->plot.map[y][x] == 'C')
@@ -27,9 +29,6 @@ static void	check_map_maker(t_game *game, int y, int x)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->collect.ptr, (32 * x), (32 * y));
 	}
-	else if ((game->plot.map[y][x] == 'E') && game->i.collectible == 0)
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->portal.ptr, (32 * x), (32 * y));
 	else
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->floor.ptr, (32 * x), (32 * y));
@@ -78,7 +77,7 @@ void	map_maker(t_game *game)
 	return ;
 }
 
-t_counter	start_counter(char *string_map, t_game *game, int i)
+static t_counter	start_counter(char *string_map, t_game *game, int i)
 {
 	t_counter	cnt;
 
