@@ -82,7 +82,7 @@ static char *portal1_[] = {
 "Q c #62A6CF",
 "! c #61A6D0",
 "~ c #62A8D1",
-"^ c None",
+"^ c #489848",
 /* pixels */
 "^^^^^^^^^^^YYYEEEEEYY^^^^^^^^^^^",
 "^^^^^^^^DYRliiiiuipVAKPR^^^^^^^^",

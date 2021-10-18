@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mov_utils.c                                        :+:      :+:    :+:   */
+/*   mov_utils_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/17 00:33:04 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/17 17:59:12 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long.h"
+#include "../../includes/so_long_bonus.h"
 
 int	key_check(int keycode, t_game *game)
 {

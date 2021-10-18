@@ -32,7 +32,7 @@ MSRC_B =	$(addprefix $(MOVE_B), \
 A_SRC_B =	$(addprefix $(SOURCE_B), \
 		$(MSRC_B) \
 		so_long_bonus.c window_bonus.c images_bonus.c map_bonus.c \
-		map_update_bonus.c \
+		map_update_bonus.c animation_bonus.c\
 )
 
 SRC =	$(A_SRC) $(GNSRC)

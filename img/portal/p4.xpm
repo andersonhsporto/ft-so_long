@@ -86,7 +86,7 @@ static char *p4[] = {
 "/ c #62A6CF",
 "( c #61A7D0",
 ") c #63A8D1",
-"_ c None",
+"_ c #489848",
 /* pixels */
 "_________^(PSSSSDSDJU~^_________",
 "_______KUIRlwwrwwryxDDPE~_______",

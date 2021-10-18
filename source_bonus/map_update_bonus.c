@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_update.c                                       :+:      :+:    :+:   */
+/*   map_update_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 07:16:50 by marvin           ###   ########.fr       */
+/*   Updated: 2021/10/17 17:59:22 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 void	player_init(t_game	*game)
 {

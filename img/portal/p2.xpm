@@ -79,7 +79,7 @@ static char *p2[] = {
 "R c #62A6CF",
 "E c #61A7D0",
 "W c #62A8D1",
-"Q c None",
+"Q c #489848",
 /* pixels */
 "QQQQQQQQQQQTYTTYTUTITQQQQQQQQQQQ",
 "QQQQQQQQQTWDzczcczcZGYYQQQQQQQQQ",

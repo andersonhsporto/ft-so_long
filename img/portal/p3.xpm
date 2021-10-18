@@ -98,7 +98,7 @@ static char *p3[] = {
 ".. c #62A6CF",
 "X. c #60A6D0",
 "o. c #62A8D1",
-"O. c None",
+"O. c #489848",
 /* pixels */
 "O.O.O.O.O.O.O.O.O.O.O. . . .|  . . .|  . .O.O.O.O.O.O.O.O.O.O.O.",
 "O.O.O.O.O.O.O.O.O. .o.( K K K K K K E ~ _  . .O.O.O.O.O.O.O.O.O.",

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   images.c                                           :+:      :+:    :+:   */
+/*   images_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/17 03:10:53 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/18 03:25:33 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 void	init_so_long(t_game *game)
 {
@@ -29,8 +29,23 @@ void	init_so_long(t_game *game)
 		game->i.movements = 0;
 }
 
+void	init_sprites(t_game	*game)
+{
+	int i;
+	int j;
+	game->portal_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p1.xpm", &i, &j);
+	game->portal_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p2.xpm", &i, &j);
+	game->portal_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p3.xpm", &i, &j);
+	game->portal_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p4.xpm", &i, &j);
+	game->down_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p1.xpm", &i, &j);
+	game->down_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p2.xpm", &i, &j);
+	game->down_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p3.xpm", &i, &j);
+	return ;
+}
+
 void	init_images(t_game	*game)
 {
+	init_sprites(game);
 	game->wall = new_sprite(game->mlx_pointer,
 			"./img/tree.xpm");
 	game->floor = new_sprite(game->mlx_pointer,
@@ -38,7 +53,7 @@ void	init_images(t_game	*game)
 	game->collect = new_sprite(game->mlx_pointer,
 			"./img/potion.xpm");
 	game->portal = new_sprite(game->mlx_pointer,
-			"./img/portal.xpm");
+			"./img/portal/p1.xpm");
 	game->character = new_sprite(game->mlx_pointer,
 			"./img/link_sprites/down_1__.xpm");
 	game->character_l = new_sprite(game->mlx_pointer,
