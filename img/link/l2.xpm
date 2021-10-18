@@ -186,7 +186,7 @@ static char *l2[] = {
 "{. c #FFECC9",
 "}. c #FDEDD2",
 "|. c #F9F9F7",
-" X c None",
+" X c #489848",
 /* pixels */
 " X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X",
 " X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X",

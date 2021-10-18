@@ -195,7 +195,7 @@ static char *l3[] = {
 "@X c #FEE7C1",
 "#X c #FFFAEE",
 "$X c #FFFFFA",
-"%X c None",
+"%X c #489848",
 /* pixels */
 "%X%X%X%X%X%X%X[ / P 1.z b 2.2.=.1.1.%X%X%X%X%X%X%X%X%X%X%X%X%X%X",
 "%X%X%X%X%X%X%XC.r.7.g.;.b  .=.1.1.1.1.%X%X%X%X%X%X%X%X%X%X%X%X%X",

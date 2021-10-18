@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:46 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/17 17:59:06 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/18 20:53:34 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,32 @@ static void	check_right(t_game *game)
 		}
 	}
 	return ;
+}
+
+
+int	print_frame_right(t_game *game, int old_counter, int new_counter)
+{
+	if (old_counter == 0)
+		put_image(game, game->right_a.frame0);
+	if (old_counter == 2)
+		put_image(game, game->right_a.frame1);
+	if (old_counter == 4)
+		put_image(game, game->right_a.frame2);
+	if (old_counter == 6)
+		put_image(game, game->right_a.frame3);
+	if (old_counter == 8)
+		put_image(game, game->right_a.frame4);
+	if (old_counter == 10)
+		put_image(game, game->right_a.frame5);
+	if (old_counter == 12)
+		put_image(game, game->right_a.frame6);
+	if (old_counter == 14)
+		put_image(game, game->right_a.frame7);
+	if (old_counter == 16)
+		put_image(game, game->right_a.frame8);
+	if (old_counter == 18)
+		put_image(game, game->right_a.frame9);
+	return (new_counter);
 }
 
 void	move_right(t_game *game)

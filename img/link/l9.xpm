@@ -203,7 +203,7 @@ static char *l9[] = {
 ";X c #FFEBC6",
 ":X c #D1D8E8",
 ">X c #FFF7E2",
-",X c None",
+",X c #489848",
 /* pixels */
 ",X,X,X,X,X,XO.R Y D g $.1.8.8.;.F H ,X,X,X,X,X,X,X,X,X,X,X,X,X,X",
 ",X,X,X,X,Xz.h.t.5.P M B :.1.1.,.%.&.%.,X,X,X,X,X,X,X,X,X,X,X,X,X",

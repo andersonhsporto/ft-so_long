@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 03:46:16 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/18 20:53:14 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_draw
 
 typedef struct s_frames
 {
+	void	*frame0;
 	void	*frame1;
 	void	*frame2;
 	void	*frame3;
@@ -54,6 +55,7 @@ typedef struct s_frames
 	void	*frame6;
 	void	*frame7;
 	void	*frame8;
+	void	*frame9;
 }	t_frames;
 
 typedef struct s_game
@@ -72,6 +74,8 @@ typedef struct s_game
 	t_img		portal;
 	t_frames	portal_a;
 	t_frames	down_a;
+	t_frames	left_a;
+	t_frames	right_a;
 }	t_game;
 
 # define UP          119

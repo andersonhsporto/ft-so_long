@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 03:25:33 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/18 16:47:10 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,77 @@ void	init_so_long(t_game *game)
 	game->mlx_pointer = mlx_init();
 	mlx_get_screen_size(game->mlx_pointer, &i, &j);
 	if (((game->plot.length  * 32) > i) || ((game->plot.height * 32) > j))
-		endgame("Error\n Map size larger than monitor", game, 1);
+		endgame("Map size larger than display resolution", game, 1);
 	game->window_pointer = mlx_new_window(game->mlx_pointer,
 			(game->plot.length * 32), (game->plot.height * 32), "./so_long");
 	if (!game->i.movements)
 		game->i.movements = 0;
 }
 
+void	init_link_down(t_game *game, int i, int j)
+{
+	game->down_a.frame0 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D1.xpm", &i, &j);
+	game->down_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D2.xpm", &i, &j);
+	game->down_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D3.xpm", &i, &j);
+	game->down_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D4.xpm", &i, &j);
+	game->down_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D5.xpm", &i, &j);
+	game->down_a.frame5 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D6.xpm", &i, &j);
+	game->down_a.frame6 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D7.xpm", &i, &j);
+	game->down_a.frame7 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D8.xpm", &i, &j);
+	game->down_a.frame8 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D9.xpm", &i, &j);
+	game->down_a.frame9 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/D10.xpm", &i, &j);
+	return ;
+}
+
+void	init_link_left(t_game *game, int i, int j)
+{
+	game->left_a.frame0 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l1.xpm", &i, &j);
+	game->left_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l2.xpm", &i, &j);
+	game->left_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l3.xpm", &i, &j);
+	game->left_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l4.xpm", &i, &j);
+	game->left_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l5.xpm", &i, &j);
+	game->left_a.frame5 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l6.xpm", &i, &j);
+	game->left_a.frame6 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l7.xpm", &i, &j);
+	game->left_a.frame7 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l8.xpm", &i, &j);
+	game->left_a.frame8 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l9.xpm", &i, &j);
+	game->left_a.frame9 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/l10.xpm", &i, &j);
+	return ;
+}
+
 void	init_sprites(t_game	*game)
 {
 	int i;
 	int j;
+
+	i = 0;
+	j = 0;
+	init_link_down(game, i, j);
+	init_link_left(game, i, j);
 	game->portal_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p1.xpm", &i, &j);
 	game->portal_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p2.xpm", &i, &j);
 	game->portal_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p3.xpm", &i, &j);
 	game->portal_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p4.xpm", &i, &j);
-	game->down_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p1.xpm", &i, &j);
-	game->down_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p2.xpm", &i, &j);
-	game->down_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p3.xpm", &i, &j);
+
 	return ;
 }
 
@@ -55,13 +108,13 @@ void	init_images(t_game	*game)
 	game->portal = new_sprite(game->mlx_pointer,
 			"./img/portal/p1.xpm");
 	game->character = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/down_1__.xpm");
+			"./img/static/down.xpm");
 	game->character_l = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/left_1__.xpm");
+			"./img/static/left.xpm");
 	game->character_r = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/right_1__.xpm");
+			"./img/static/right.xpm");
 	game->character_u = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/up_1__.xpm");
+			"./img/static/up.xpm");
 	return ;
 }
 

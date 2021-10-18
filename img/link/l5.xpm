@@ -199,7 +199,7 @@ static char *l5[] = {
 "&X c #D1D8E8",
 "*X c #FFF7E2",
 "=X c #E8EDE9",
-"-X c None",
+"-X c #489848",
 /* pixels */
 "-X-X-X-X-X-X*.*.+.Q 6.N c L -X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X",
 "-X-X-X-X-Xn.x.x.g.) 6.N c :.-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X",

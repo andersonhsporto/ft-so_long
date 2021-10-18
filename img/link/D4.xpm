@@ -210,7 +210,7 @@ static char *D4[] = {
 "3X c #F6E6CD",
 "4X c #FBF7F1",
 "5X c #EEECEB",
-"6X c None",
+"6X c #489848",
 /* pixels */
 "6X6X6X6X6X6X6X6X6X6X6X6X+ # z b  .p X 6X6X6X6X6X6X6X6X6X6X6X6X6X",
 "6X6X6X6X6X6X6X6X6X  < b @.#.&.&.&.*.#.O.v +   6X6X6X6X6X6X6X6X6X",

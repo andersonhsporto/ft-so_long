@@ -209,7 +209,7 @@ static char *D10[] = {
 "2X c #FFEFD0",
 "3X c #F9F6F3",
 "4X c #F7F1EA",
-"5X c None",
+"5X c #489848",
 /* pixels */
 "5X5X5X5X5X5X5X5X5X5X5XX r O.O.k k k O.r X 5X5X5X5X5X5X5X5X5X5X5X",
 "5X5X5X5X5X5X5X5X5X  - %.=.*.*.*.*.*.*.=.%.-   5X5X5X5X5X5X5X5X5X",

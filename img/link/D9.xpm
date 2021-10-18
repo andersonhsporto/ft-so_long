@@ -202,7 +202,7 @@ static char *D9[] = {
 "-X c #F2EEEB",
 ";X c #F7F4F1",
 ":X c #D0CDCB",
-">X c None",
+">X c #489848",
 /* pixels */
 ">X>X>X>X>X>X>X>X>X>X>X>X+ @ e _ _ e @ + >X>X>X>X>X>X>X>X>X>X>X>X",
 ">X>X>X>X>X>X>X>X>X  + p { }  .| |  .} { p -   >X>X>X>X>X>X>X>X>X",

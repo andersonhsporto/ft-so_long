@@ -212,7 +212,7 @@ static char *D7[] = {
 "5X c #D2D7E2",
 "6X c #FFF7E4",
 "7X c #F1EEEB",
-"8X c None",
+"8X c #489848",
 /* pixels */
 "8X8X8X8X8X8X8X8X8X8X8X8X. $ l c c t . 8X8X8X8X8X8X8X8X8X8X8X8X8X",
 "8X8X8X8X8X8X8X8X8X      t l z z z z l :       8X8X8X8X8X8X8X8X8X",

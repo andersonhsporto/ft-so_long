@@ -204,7 +204,7 @@ static char *l8[] = {
 ":X c #FFEBC6",
 ">X c #D1D8E8",
 ",X c #FFF7E2",
-"<X c None",
+"<X c #489848",
 /* pixels */
 "<X<X<X<X<X<X;.( E J z 7.e.a.s.4.I <X<X<X<X<X<X<X<X<X<X<X<X<X<X<X",
 "<X<X<X<X<XY.Y.c.j.t.A D 6.a.a.8.3.<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X",

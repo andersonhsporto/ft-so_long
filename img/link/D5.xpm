@@ -204,7 +204,7 @@ static char *D5[] = {
 ":X c #FFEFD0",
 ">X c #FBF5EC",
 ",X c #FAF6F3",
-"<X c None",
+"<X c #489848",
 /* pixels */
 "<X<X<X<X<X<X<X<X<X<X<X. u ..k k k k ..t O <X<X<X<X<X<X<X<X<X<X<X",
 "<X<X<X<X<X<X<X<X<X  - @.%.$.$.$.$.$.$.%.@.-   <X<X<X<X<X<X<X<X<X",
