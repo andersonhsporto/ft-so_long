@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:55:37 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 01:36:41 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:05:37 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	move_down(t_game *game)
 {
 	static int	i;
 
-	game->character.mem = 1;
+	game->character.mem = down;
 	check_down(game);
 	if (i == 0)
 		i = print_frame_down(game, 0, 2);

@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:55:37 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 19:56:07 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:06:09 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	check_down(t_game *game)
 void	move_down(t_game *game)
 {
 	check_down(game);
-	game->character.mem = 1;
+	game->character.mem = down;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 		game->character.ptr, game->character.x, game->character.y);
 	return ;

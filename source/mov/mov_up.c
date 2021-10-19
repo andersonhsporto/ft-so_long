@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:14 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 19:57:15 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:06:30 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	check_up(t_game *game)
 void	move_up(t_game *game)
 {
 	check_up(game);
-	game->character.mem = 4;
+	game->character.mem = up;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 		game->character_u.ptr, game->character.x, game->character.y);
 	return ;

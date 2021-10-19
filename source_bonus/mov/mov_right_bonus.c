@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:46 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 01:35:45 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:05:23 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	move_right(t_game *game)
 	static int	i;
 
 	check_right(game);
-	game->character.mem = 3;
+	game->character.mem = right;
 	if (i == 0)
 		i = print_frame_right(game, 0, 2);
 	else if (i == 2)

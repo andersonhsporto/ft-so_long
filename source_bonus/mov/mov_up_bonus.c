@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:14 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 01:41:21 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:00:36 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	move_up(t_game *game)
 	static int	i;
 
 	check_up(game);
-	game->character.mem = 4;
+	game->character.mem = up;
 	if (i == 0)
 		i = print_frame_up(game, 0, 2);
 	else if (i == 2)

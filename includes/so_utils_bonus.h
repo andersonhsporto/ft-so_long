@@ -6,12 +6,20 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 21:20:39 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:04:35 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_UTILS_BONUS_H
 # define SO_UTILS_BONUS_H
+
+enum e_direction
+{
+	down,
+	left,
+	right,
+	up,
+};
 
 typedef struct s_counter
 {
@@ -41,8 +49,6 @@ typedef struct s_draw
 	char	*line;
 	char	*temp;
 }	t_draw;
-
-
 
 typedef struct s_frames
 {

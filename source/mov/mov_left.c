@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:29 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/16 19:56:30 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:06:16 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	check_left(t_game *game)
 void	move_left(t_game *game)
 {
 	check_left(game);
-	game->character.mem = 2;
+	game->character.mem = left;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 		game->character_l.ptr, game->character.x, game->character.y);
 	return ;

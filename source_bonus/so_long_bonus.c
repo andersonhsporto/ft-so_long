@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 21:47:10 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:04:46 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		mlx_hook(game.window_pointer, 3, (1L << 1), fix_pos, &game);
 		mlx_hook(game.window_pointer, 17, (0L), red_cross, &game);
 		mlx_hook(game.window_pointer, 12, (1L << 15), mini_maker, &game);
+		//mlx_loop_hook(game.mlx_pointer, )
 		mlx_do_sync((game.mlx_pointer));
 		mlx_loop(game.mlx_pointer);
 	}

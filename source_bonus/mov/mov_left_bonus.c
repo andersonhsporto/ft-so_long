@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:29 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 01:37:57 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:05:30 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	move_left(t_game *game)
 {
 	static int	i;
 
-	game->character.mem = 2;
+	game->character.mem = left;
 	check_left(game);
 	if (i == 0)
 		i = print_frame_left(game, 0, 2);
