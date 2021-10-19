@@ -200,7 +200,7 @@ static char *r10[] = {
 "*X c #FFECC8",
 "=X c #FFEFD0",
 "-X c #FEFDFB",
-";X c None",
+";X c #489848",
 /* pixels */
 ";X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;XP x b 4.' _ -.-.-.;X;X;X;X;X;X",
 ";X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X;X<.v b 4.] +.-.f.l.;X;X;X;X;X;X",

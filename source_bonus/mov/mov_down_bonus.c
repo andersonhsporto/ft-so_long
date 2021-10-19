@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:55:37 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 16:41:02 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 01:36:41 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ static void	check_down(t_game *game)
 {
 	if (game->character.y < ((game->plot.height * 32) - 64))
 	{
-		if (!(game->plot.map[((game->character.y + 32)
-						/ 32)][(game->character.x / 32)] == '1'))
+		if ((!(game->plot.map[((game->character.y + 32) / 32)]
+					[((game->character.x + 31) / 32)] == '1')) && (
+				!(game->plot.map[((game->character.y + 32) / 32)]
+					[((game->character.x) / 32)] == '1')))
 		{
 			game->character.y += 4;
 			map_maker(game);

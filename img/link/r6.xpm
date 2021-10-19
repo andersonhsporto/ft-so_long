@@ -204,7 +204,7 @@ static char *r6[] = {
 ":X c #FFF0D1",
 ">X c #CFD7E9",
 ",X c #FFF7E4",
-"<X c None",
+"<X c #489848",
 /* pixels */
 "<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X",
 "<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X<X",

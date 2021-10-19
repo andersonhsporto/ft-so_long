@@ -199,7 +199,7 @@ static char *r5[] = {
 "&X c #D1D8E8",
 "*X c #FFF7E2",
 "=X c #E8EDE9",
-"-X c None",
+"-X c #489848",
 /* pixels */
 "-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-XJ c N 6.Q +.$.@.-X-X-X-X-X-X",
 "-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X:.n N 6.) $.x.x.Q.-X-X-X-X-X",

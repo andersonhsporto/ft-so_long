@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:46 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 20:53:34 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/19 01:35:45 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,18 @@ static void	check_right(t_game *game)
 {
 	if (game->character.x < ((game->plot.length * 32) - 64))
 	{
-		if (!(game->plot.map[(game->character.y / 32)]
-				[((game->character.x + 32) / 32)] == '1'))
+		if ((!(game->plot.map[(game->character.y / 32)]
+					[((game->character.x + 32) / 32)] == '1')) && (
+				!(game->plot.map[((game->character.y + 31) / 32)]
+					[((game->character.x + 32) / 32)] == '1')))
 		{
-			game->character.x += 32;
+			game->character.x += 4;
 			map_maker(game);
 			print_moves(game);
 		}
 	}
 	return ;
 }
-
 
 int	print_frame_right(t_game *game, int old_counter, int new_counter)
 {
@@ -55,9 +56,29 @@ int	print_frame_right(t_game *game, int old_counter, int new_counter)
 
 void	move_right(t_game *game)
 {
+	static int	i;
+
 	check_right(game);
 	game->character.mem = 3;
-	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-		game->character_r.ptr, game->character.x, game->character.y);
+	if (i == 0)
+		i = print_frame_right(game, 0, 2);
+	else if (i == 2)
+		i = print_frame_right(game, 2, 4);
+	else if (i == 4)
+		i = print_frame_right(game, 4, 6);
+	else if (i == 6)
+		i = print_frame_right(game, 6, 8);
+	else if (i == 8)
+		i = print_frame_right(game, 8, 10);
+	else if (i == 10)
+		i = print_frame_right(game, 10, 12);
+	else if (i == 12)
+		i = print_frame_right(game, 12, 14);
+	else if (i == 14)
+		i = print_frame_right(game, 14, 16);
+	else if (i == 16)
+		i = print_frame_right(game, 16, 18);
+	else if (i == 18)
+		i = print_frame_right(game, 18, 0);
 	return ;
 }

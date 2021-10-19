@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 16:47:10 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/18 21:27:52 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,31 @@ void	init_link_down(t_game *game, int i, int j)
 	return ;
 }
 
+void	init_link_right(t_game *game, int i, int j)
+{
+	game->right_a.frame0 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r1.xpm", &i, &j);
+	game->right_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r2.xpm", &i, &j);
+	game->right_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r3.xpm", &i, &j);
+	game->right_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r4.xpm", &i, &j);
+	game->right_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r5.xpm", &i, &j);
+	game->right_a.frame5 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r6.xpm", &i, &j);
+	game->right_a.frame6 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r7.xpm", &i, &j);
+	game->right_a.frame7 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r8.xpm", &i, &j);
+	game->right_a.frame8 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r9.xpm", &i, &j);
+	game->right_a.frame9 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/r10.xpm", &i, &j);
+	return ;
+}
+
 void	init_link_left(t_game *game, int i, int j)
 {
 	game->left_a.frame0 = mlx_xpm_file_to_image(game->mlx_pointer,
@@ -79,6 +104,31 @@ void	init_link_left(t_game *game, int i, int j)
 	return ;
 }
 
+void	init_link_up(t_game *game, int i, int j)
+{
+	game->up_a.frame0 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u1.xpm", &i, &j);
+	game->up_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u2.xpm", &i, &j);
+	game->up_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u3.xpm", &i, &j);
+	game->up_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u4.xpm", &i, &j);
+	game->up_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u5.xpm", &i, &j);
+	game->up_a.frame5 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u6.xpm", &i, &j);
+	game->up_a.frame6 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u7.xpm", &i, &j);
+	game->up_a.frame7 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u8.xpm", &i, &j);
+	game->up_a.frame8 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u9.xpm", &i, &j);
+	game->up_a.frame9 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/link/u10.xpm", &i, &j);
+	return ;
+}
+
 void	init_sprites(t_game	*game)
 {
 	int i;
@@ -88,6 +138,8 @@ void	init_sprites(t_game	*game)
 	j = 0;
 	init_link_down(game, i, j);
 	init_link_left(game, i, j);
+	init_link_right(game, i, j);
+	init_link_up(game, i, j);
 	game->portal_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p1.xpm", &i, &j);
 	game->portal_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p2.xpm", &i, &j);
 	game->portal_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p3.xpm", &i, &j);

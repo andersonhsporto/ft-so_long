@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 20:53:14 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/18 21:20:39 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ typedef struct s_game
 	t_frames	down_a;
 	t_frames	left_a;
 	t_frames	right_a;
+	t_frames	up_a;
 }	t_game;
 
 # define UP          119

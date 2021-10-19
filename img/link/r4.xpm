@@ -202,7 +202,7 @@ static char *r4[] = {
 "-X c #FFEBC6",
 ";X c #D1D8E8",
 ":X c #FFF7E2",
-">X c None",
+">X c #489848",
 /* pixels */
 ">X>X>X>X>X>X>X>X>X>X>X>X>X>X>XF &.5.5.5.$.g A J T O.>X>X>X>X>X>X",
 ">X>X>X>X>X>X>X>X>X>X>X>X>X>X>X%.-.5.<.;.N m H Q ..f.l.>X>X>X>X>X",
