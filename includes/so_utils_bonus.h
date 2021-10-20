@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 20:04:35 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/20 01:33:47 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ typedef struct s_game
 # define LEFT        97
 # define RIGHT       100
 # define ESC         65307
+# define SPEED	5
 
 #endif

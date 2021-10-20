@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 21:27:52 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/20 01:51:37 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_so_long(t_game *game)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 0; 
 	j = 0;
 	game->mlx_pointer = mlx_init();
 	mlx_get_screen_size(game->mlx_pointer, &i, &j);
@@ -144,7 +144,6 @@ void	init_sprites(t_game	*game)
 	game->portal_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p2.xpm", &i, &j);
 	game->portal_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p3.xpm", &i, &j);
 	game->portal_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p4.xpm", &i, &j);
-
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 01:34:21 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/20 02:04:12 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	key_check(int keycode, t_game *game)
 	return (0);
 }
 
+
+
 void	print_moves(t_game *game)
 {
 	game->i.movements += 1;
@@ -41,7 +43,8 @@ void	print_moves(t_game *game)
 	{
 		endgame("\n\nThe End! :) \n", game, -1);
 	}
-	ft_putstr_fd("\rMovements: ", 1);
-	ft_putnbr_fd(game->i.movements, 1);
+	// ft_putstr_fd("\rMovements: ", 1);
+	// ft_putnbr_fd(game->i.movements, 1);
+	
 	return ;
 }

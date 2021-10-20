@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 02:13:23 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/20 01:50:22 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void	check_map_maker(t_game *game, int y, int x)
 	{
 		game->portal.x = x * 32;
 		game->portal.y = y * 32;
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->portal.ptr, (32 * x), (32 * y));
+		// mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+		// 	game->portal.ptr, (32 * x), (32 * y));
 	}
 	else if (game->plot.map[y][x] == '1')
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
@@ -98,7 +98,7 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 		i++;
 	}
 	if (!(cnt.collectible > 0 && cnt.exit > 0 && cnt
-			.start == 1 && cnt.empty > 0))
+			.start == 1))
 		endgame("Invalid, file!", game, 1);
 	return (cnt);
 }

@@ -2,7 +2,7 @@ NAME =	so_long
 
 CC 	 =	clang
 
-FLAGS =	-Wall -Wextra -Werror $(INCLUDE)
+FLAGS =	-Wall -Wextra  $(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -70,11 +70,6 @@ bonus: fclean $(OBJ_B)
 	make bonus -C ./libft
 	$(CC) $(FLAGS) $(INCLUDE) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
 
-push:
-	git add .
-	git commit -m "updated"
-	git push
-
 c:
 	rm -rf ./a.out
 	$(CC) $(FLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
@@ -86,6 +81,13 @@ valgrind:
 	rm -rf ./a.out
 	$(CC) -g3 $(FLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./teste.ber
+
+
+push:
+	git add .
+	@read -p "Message:" message; \
+	git commit -m "$$message"; \
+	git push
 
 b:
 	rm -rf ./a.out

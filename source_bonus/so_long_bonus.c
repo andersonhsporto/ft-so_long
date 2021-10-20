@@ -6,11 +6,56 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 20:04:46 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/20 02:01:07 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
+
+#include <sys/time.h>
+#include <sys/types.h>
+
+#include <time.h>
+
+void delay(int milliseconds)
+{
+    long pause;
+    clock_t now,then;
+
+    pause = milliseconds*(CLOCKS_PER_SEC/1000);
+    now = then = clock();
+    while( (now-then) < pause )
+        now = clock();
+}
+
+int	fix_image(t_game *game)
+{
+	static int i;
+
+	if (i == SPEED)
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame1, game->portal.x, game->portal.x);
+	}
+	if (i == 2 * SPEED)
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame2, game->portal.x, game->portal.x);
+	}
+	if (i == 4 * SPEED)
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame3, game->portal.x, game->portal.x);
+
+	}
+	if (i == 5 * SPEED)
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame4, game->portal.x, game->portal.x);
+		i = 0;
+	}
+	delay(50);
+	mini_maker(game);
+	i++;
+	return (0);
+}
+
 
 int	main(int argc, char **argv)
 {
@@ -27,7 +72,7 @@ int	main(int argc, char **argv)
 		mlx_hook(game.window_pointer, 3, (1L << 1), fix_pos, &game);
 		mlx_hook(game.window_pointer, 17, (0L), red_cross, &game);
 		mlx_hook(game.window_pointer, 12, (1L << 15), mini_maker, &game);
-		//mlx_loop_hook(game.mlx_pointer, )
+		mlx_loop_hook(game.mlx_pointer, fix_image, &game);
 		mlx_do_sync((game.mlx_pointer));
 		mlx_loop(game.mlx_pointer);
 	}
