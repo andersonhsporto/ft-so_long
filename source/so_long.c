@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 07:18:48 by marvin           ###   ########.fr       */
+/*   Updated: 2021/10/20 02:52:56 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	main(int argc, char **argv)
 		mlx_loop(game.mlx_pointer);
 	}
 	if ((argc == 2 && !(check_arg(argv[1]))))
-		endgame("Can't open file. The format is not supported!", &game, 1);
+		endgame("Can't open file. The format is not supported!", &game, 2);
 	if (argc > 2)
-		endgame("Can't open multiple files!", &game, 1);
+		endgame("Can't open multiple files!", &game, 2);
 	else
-		endgame("Please specify file name!", &game, 1);
+		endgame("Please specify file name!", &game, 2);
 	return (0);
 }

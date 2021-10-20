@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 02:08:50 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/20 02:57:01 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	len_map(char **map, t_game *game)
 	{
 		j = ft_strlen(map[i]);
 		if (k != j)
-			endgame("Invalid, file!", game, 0);
+			endgame("Invalid, file!", game, 1);
 		i++;
 	}
 	return (k);
