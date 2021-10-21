@@ -6,11 +6,37 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 01:50:22 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 01:22:38 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
+
+void	print_map_string(t_game *game)
+{
+	char	*string;
+
+	string = ft_itoa(game->i.movements);
+	if (game->plot.length < 9)
+	{
+		mlx_string_put(game->mlx_pointer, game->window_pointer, 2,
+			((game->plot.height) * 32) + 12, 0xFFFFFF, "Movements: ");
+		mlx_string_put(game->mlx_pointer, game->window_pointer, 66,
+			((game->plot.height) * 32) + 12, 0xFFFFFF, string);
+	}
+	else
+	{
+		mlx_string_put(game->mlx_pointer, game->window_pointer,
+			(((game->plot.length - 4) / 2) * 32),
+			(game->plot.height * 32) + 12, 0xFFFFFF, "Movements: ");
+		mlx_string_put(game->mlx_pointer, game->window_pointer,
+			(((game->plot.length - 4) / 2) * 32) + 64,
+			(game->plot.height * 32) + 12, 0xFFFFFF, string);
+	}
+	free(string);
+	string = NULL;
+	return ;
+}
 
 static void	check_map_maker(t_game *game, int y, int x)
 {
@@ -18,17 +44,21 @@ static void	check_map_maker(t_game *game, int y, int x)
 	{
 		game->portal.x = x * 32;
 		game->portal.y = y * 32;
-		// mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-		// 	game->portal.ptr, (32 * x), (32 * y));
 	}
 	else if (game->plot.map[y][x] == '1')
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->wall.ptr, (32 * x), (32 * y));
-	else if (game->plot.map[y][x] == 'C')
 	{
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->collect.ptr, (32 * x), (32 * y));
+			game->wall.ptr, (32 * x), (32 * y));
+		if (game->plot.map[game->plot.height - 1][x] == '1')
+		{
+			mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+				game->floor.ptr, (32 * x), (32 * game->plot.height));
+			print_map_string(game);
+		}
 	}
+	else if (game->plot.map[y][x] == 'C')
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->collect.ptr, (32 * x), (32 * y));
 	else
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->floor.ptr, (32 * x), (32 * y));
@@ -49,7 +79,7 @@ static void	map_check_one(t_game *game, int y, int x)
 	}
 	if (!(ft_strchr("01CEP", game->plot.map[y][x])))
 	{
-		endgame("Map is not rectangular!", game, 1);
+		endgame("Invalid character in map", game, 1);
 	}
 	check_map_maker(game, y, x);
 	return ;

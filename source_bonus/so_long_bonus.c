@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 02:01:07 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/20 23:47:05 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,25 @@
 
 #include <time.h>
 
-void delay(int milliseconds)
+void	delay(int milliseconds)
 {
-    long pause;
-    clock_t now,then;
+	long	pause;
+	clock_t	now;
+	clock_t	then;
 
-    pause = milliseconds*(CLOCKS_PER_SEC/1000);
-    now = then = clock();
-    while( (now-then) < pause )
-        now = clock();
+	pause = milliseconds * (CLOCKS_PER_SEC / 1000);
+	then = clock();
+	now = clock();
+	while ((now - then) < pause)
+	{
+		now = clock();
+	}
+	return ;
 }
 
 int	fix_image(t_game *game)
 {
-	static int i;
+	static int	i;
 
 	if (i == SPEED)
 	{
