@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/18 21:34:38 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:23:16 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@
 # include <stdlib.h>//malloc
 # include <stdio.h>//printf
 
-# include <sys/time.h>
-# include <sys/types.h>
+# include <time.h>//bonus delay
 
 void	map_maker(t_game	*game);
 void	init_map(t_game *game, char *path);

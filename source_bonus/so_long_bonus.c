@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 23:47:05 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:44:56 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
-
-#include <sys/time.h>
-#include <sys/types.h>
-
-#include <time.h>
 
 void	delay(int milliseconds)
 {
@@ -38,21 +33,18 @@ int	fix_image(t_game *game)
 	static int	i;
 
 	if (i == SPEED)
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame1, game->portal.x, game->portal.x);
+	if (i == (2 * SPEED))
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame2, game->portal.x, game->portal.x);
+	if (i == (4 * SPEED))
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame3, game->portal.x, game->portal.x);
+	if (i == (5 * SPEED))
 	{
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame1, game->portal.x, game->portal.x);
-	}
-	if (i == 2 * SPEED)
-	{
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame2, game->portal.x, game->portal.x);
-	}
-	if (i == 4 * SPEED)
-	{
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame3, game->portal.x, game->portal.x);
-
-	}
-	if (i == 5 * SPEED)
-	{
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, game->portal_a.frame4, game->portal.x, game->portal.x);
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame4, game->portal.x, game->portal.x);
 		i = 0;
 	}
 	delay(50);
@@ -60,7 +52,6 @@ int	fix_image(t_game *game)
 	i++;
 	return (0);
 }
-
 
 int	main(int argc, char **argv)
 {
@@ -82,10 +73,10 @@ int	main(int argc, char **argv)
 		mlx_loop(game.mlx_pointer);
 	}
 	if ((argc == 2 && !(check_arg(argv[1]))))
-		endgame("Can't open file. The format is not supported!", &game, 1);
+		endgame("Can't open file. The format is not supported!", &game, 2);
 	if (argc > 2)
-		endgame("Can't open multiple files!", &game, 1);
+		endgame("Can't open multiple files!", &game, 2);
 	else
-		endgame("Please specify file name!", &game, 1);
+		endgame("Please specify file name!", &game, 2);
 	return (0);
 }

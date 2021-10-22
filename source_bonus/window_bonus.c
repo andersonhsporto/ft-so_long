@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 02:54:23 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:52:10 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ void	endgame(char *message, t_game *game, int i)
 	}
 	if (i == 2)
 	{
-		printf("\033[1m\033[31mError\n%s\n\033[0m", message);
+		printf(RED"Error\n%s\n"ENDC, message);
 		exit(1);
 	}
-	printf("\033[1m\033[31mError\n%s\n\033[0m", message);
+	printf(RED"Error\n%s\n"ENDC, message);
 	destroy_image(game);
 	exit(1);
 	return ;

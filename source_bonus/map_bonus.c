@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 01:22:38 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 22:28:01 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,31 @@ void	print_map_string(t_game *game)
 	return ;
 }
 
+void	print_potion(t_game *game, int y, int x)
+{
+	static int i;
+
+	if (i > 0 && i < SPEED)
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->collect_a.frame1, x * 32, y * 32);
+	}
+	if (i >= SPEED && i < (SPEED * 4))
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->collect_a.frame0, x * 32, y * 32);
+	}
+	if (i >= (SPEED * 4) && i < (SPEED * 8))
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->collect_a.frame2, x * 32, y * 32);
+	}
+	if (i == (SPEED * 8))
+		i = 0;
+	i++;
+	return ;
+}
+
 static void	check_map_maker(t_game *game, int y, int x)
 {
 	if (game->plot.map[y][x] == 'E')
@@ -57,8 +82,7 @@ static void	check_map_maker(t_game *game, int y, int x)
 		}
 	}
 	else if (game->plot.map[y][x] == 'C')
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->collect.ptr, (32 * x), (32 * y));
+		print_potion(game, y, x);
 	else
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->floor.ptr, (32 * x), (32 * y));
@@ -139,7 +163,7 @@ void	init_map(t_game *game, char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		endgame("Can't find file!", game, 1);
+		endgame("Can't find file!", game, 2);
 	game->plot.temp = ft_strdup("");
 	game->plot.height = 0;
 	while (fd)

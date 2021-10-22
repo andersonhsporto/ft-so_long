@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   so_utils.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/19 20:07:18 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 22:14:22 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_UTILS_H
 # define SO_UTILS_H
+
+# define UP		119
+# define DOWN	115
+# define LEFT	97
+# define RIGHT	100
+# define ESC	65307
+# define RED	"\033[1m\033[31m"
+# define GREEN	"\033[1m\033[32m"
+# define ENDC	"\033[0m"
 
 enum e_direction
 {
@@ -65,11 +74,5 @@ typedef struct s_game
 	t_img		collect;
 	t_img		portal;
 }	t_game;
-
-# define UP          119
-# define DOWN        115
-# define LEFT        97
-# define RIGHT       100
-# define ESC         65307
 
 #endif

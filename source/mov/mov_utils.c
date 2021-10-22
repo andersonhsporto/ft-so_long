@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mov_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 02:48:29 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:58:17 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	print_moves(t_game *game)
 	if (game->plot.map[game->character.y / 32]
 		[game->character.x / 32] == 'E' && game->i.collectible == 0)
 	{
-		endgame("\033[1m\033[32m\n\nThe End! :) \033[0m", game, -1);
+		endgame(GREEN"\n\nThe End! :)"ENDC, game, -1);
 	}
 	ft_putstr_fd("\rMovements: ", 1);
 	ft_putnbr_fd(game->i.movements, 1);

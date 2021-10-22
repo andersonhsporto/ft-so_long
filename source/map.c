@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 02:55:25 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:39:05 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	init_map(t_game *game, char *path)
 
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		endgame("Can't find file!", game, 1);
+		endgame("Can't find file!", game, 2);
 	game->plot.temp = ft_strdup("");
 	game->plot.height = 0;
 	while (fd)

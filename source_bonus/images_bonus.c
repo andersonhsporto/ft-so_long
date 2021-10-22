@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   images_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/20 23:58:08 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/21 22:26:04 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,16 @@ void	init_link_up(t_game *game, int i, int j)
 	return ;
 }
 
+void	init_collec(t_game *game, int i, int j)
+{
+	game->collect_a.frame0 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/potion2.xpm", &i, &j);
+	game->collect_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/potion3.xpm", &i, &j);
+	game->collect_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/potion.xpm", &i, &j);
+}
+
 void	init_sprites(t_game	*game)
 {
 	int i;
@@ -136,6 +146,7 @@ void	init_sprites(t_game	*game)
 
 	i = 0;
 	j = 0;
+	init_collec(game, i, j);
 	init_link_down(game, i, j);
 	init_link_left(game, i, j);
 	init_link_right(game, i, j);
