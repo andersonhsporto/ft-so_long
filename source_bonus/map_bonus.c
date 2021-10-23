@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 22:28:01 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:05:58 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ static void	check_map_maker(t_game *game, int y, int x)
 	}
 	else if (game->plot.map[y][x] == 'C')
 		print_potion(game, y, x);
+	else if (ft_strchr("Ff", game->plot.map[y][x]))
+		print_e(game, y, x);
 	else
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->floor.ptr, (32 * x), (32 * y));
@@ -101,7 +103,7 @@ static void	map_check_one(t_game *game, int y, int x)
 	{
 		endgame("Map is not rectangular!", game, 1);
 	}
-	if (!(ft_strchr("01CEP", game->plot.map[y][x])))
+	if (!(ft_strchr("01CEPFf", game->plot.map[y][x])))
 	{
 		endgame("Invalid character in map", game, 1);
 	}

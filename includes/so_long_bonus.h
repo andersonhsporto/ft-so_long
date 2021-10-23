@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:23:16 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/22 02:51:43 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,8 @@ int		check_arg(const char *argv);
 void	init_sprites(t_game	*game);
 int		fix_pos(int keycode, t_game *game);
 void	put_image(t_game *game, void *frame);
+
+//enemies
+void	init_enemies(t_game *game, int i, int j);
 
 #endif

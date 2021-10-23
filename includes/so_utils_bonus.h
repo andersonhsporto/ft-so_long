@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 22:14:31 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/22 16:14:14 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ typedef struct s_img
 {
 	void	*ptr;
 	int		*pixels;
-	int		line_size;
 	int		mem;
 	int		x;
 	int		y;
@@ -74,6 +73,16 @@ typedef struct s_frames
 	void	*frame9;
 }	t_frames;
 
+typedef struct s_emydata
+{
+	int			direction;
+	int			collectible;
+	int			exit;
+	int			start;
+	int			movements;
+	t_frames	enemy_a;
+}	t_emydata;
+
 typedef struct s_game
 {
 	void		*mlx_pointer;
@@ -94,8 +103,7 @@ typedef struct s_game
 	t_frames	right_a;
 	t_frames	up_a;
 	t_frames	collect_a;
+	t_emydata	public;
 }	t_game;
-
-
 
 #endif

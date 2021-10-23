@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:57:29 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/22 03:01:59 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	mini_maker(t_game *game)
 {
 	map_maker(game);
 	if (game->i.movements == 0)
+	{
 		player_init(game);
+		//enemy_init(game);
+	}
 	if (game->character.mem == down)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character.ptr, game->character.x, game->character.y);

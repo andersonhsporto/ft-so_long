@@ -6,12 +6,36 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:21:28 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/22 16:45:21 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
+/* 
+void	enemy_init(t_game	*game)
+{
+	int	y;
+	int	x;
 
+	y = 0;
+	while (game->plot.map[y])
+	{
+		x = 0;
+		while (game->plot.map[y][x])
+		{
+			if (game->plot.map[y][x] == 'F')
+			{
+				mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+					game->public.enemy_a.frame0, (32 * x), (32 * y));
+				return ;
+			}
+			x++;
+		}
+		y++;
+	}
+	return ;
+}
+ */
 void	player_init(t_game	*game)
 {
 	int	y;
