@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:52:10 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 01:13:31 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	endgame(char *message, t_game *game, int i)
 	return ;
 }
 
-int	check_arg(const char	*argv)
+int	check_arg(const char *argv)
 {
 	size_t	len;
 	char	*string;

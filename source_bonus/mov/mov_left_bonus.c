@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:29 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:21:49 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 01:12:42 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	check_left(t_game *game)
 					[((game->character.x - 1) / 32)] == '1')))
 		{
 			game->character.x -= 4;
-			map_maker(game);
 			print_moves(game);
 		}
 	}

@@ -6,12 +6,12 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/22 16:45:21 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/24 23:54:33 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
-/* 
+
 void	enemy_init(t_game	*game)
 {
 	int	y;
@@ -35,7 +35,7 @@ void	enemy_init(t_game	*game)
 	}
 	return ;
 }
- */
+
 void	player_init(t_game	*game)
 {
 	int	y;

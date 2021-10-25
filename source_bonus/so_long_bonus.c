@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:44:56 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 01:12:10 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	fix_image(t_game *game)
 	delay(50);
 	mini_maker(game);
 	i++;
+	game->i.time++;
 	return (0);
 }
 
@@ -69,7 +70,6 @@ int	main(int argc, char **argv)
 		mlx_hook(game.window_pointer, 17, (0L), red_cross, &game);
 		mlx_hook(game.window_pointer, 12, (1L << 15), mini_maker, &game);
 		mlx_loop_hook(game.mlx_pointer, fix_image, &game);
-		mlx_do_sync((game.mlx_pointer));
 		mlx_loop(game.mlx_pointer);
 	}
 	if ((argc == 2 && !(check_arg(argv[1]))))

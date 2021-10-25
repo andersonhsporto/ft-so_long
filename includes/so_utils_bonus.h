@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/22 16:14:14 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 00:30:01 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_counter
 	int		exit;
 	int		start;
 	int		movements;
+	int		time;
 }	t_counter;
 
 typedef struct s_img
