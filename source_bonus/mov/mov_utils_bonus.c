@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/22 03:16:27 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 01:41:11 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,15 @@ void	print_moves(t_game *game)
 		[((game->character.x + 30) / 32)] = '0';
 		game->i.collectible--;
 	}
+	else if (((ft_strchr("fF", game->plot.map[game->character.y / 32]
+					[(game->character.x + 30) / 32]))) || (ft_strchr
+			("fF", game->plot.map [game->character.y / 32]
+				[(game->character.x) / 32])))
+	{
+		endgame(RED"\n\nThe End! you died :( "ENDC, game, -1);
+	}
 	else if (game->plot.map[game->character.y / 32]
 		[game->character.x / 32] == 'E' && game->i.collectible == 0)
-	{
 		endgame(GREEN"\n\nThe End! :) "ENDC, game, -1);
-	}
 	return ;
 }
