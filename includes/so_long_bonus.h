@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 01:14:27 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 22:50:05 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ int		fix_pos(int keycode, t_game *game);
 void	put_image(t_game *game, void *frame);
 
 //enemies
-void	init_enemies(t_game *game, int i, int j);
-
 void	print_e(t_game *game, int y, int x);
+void	init_enemies(t_game *game, int i, int j);
+void	destroy_enemies(t_game *game);
+
 
 #endif

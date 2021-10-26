@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:39:05 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 17:36:11 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	map_check_one(t_game *game, int y, int x)
 	}
 	if (!(ft_strchr("01CEP", game->plot.map[y][x])))
 	{
-		endgame("Map is not rectangular!", game, 1);
+		endgame("Invalid character in map", game, 1);
 	}
 	check_map_maker(game, y, x);
 	return ;

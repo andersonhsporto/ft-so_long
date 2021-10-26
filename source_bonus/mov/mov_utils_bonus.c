@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 01:41:11 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:49:33 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	key_check(int keycode, t_game *game)
 void	print_moves(t_game *game)
 {
 	game->i.movements += 1;
-	if (game->plot.map[game->character.y / 32][game->character.x / 32] == 'C')
+	if (game->plot.map[game->character.y / 32][(game->character.x)/ 32] == 'C')
 	{
 		game->plot.map[game->character.y / 32][game->character.x / 32] = '0';
 		game->i.collectible--;
@@ -44,7 +44,7 @@ void	print_moves(t_game *game)
 		game->i.collectible--;
 	}
 	else if (((ft_strchr("fF", game->plot.map[game->character.y / 32]
-					[(game->character.x + 30) / 32]))) || (ft_strchr
+					[(game->character.x + 31) / 32]))) || (ft_strchr
 			("fF", game->plot.map [game->character.y / 32]
 				[(game->character.x) / 32])))
 	{
