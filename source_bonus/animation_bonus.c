@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 02:37:10 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 00:10:15 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:11:26 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	fix_pos(int keycode, t_game *game)
 {
@@ -33,5 +33,21 @@ void	put_image(t_game *game, void *frame)
 {
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 		frame, game->character.x, game->character.y);
+	return ;
+}
+
+void	delay(int milliseconds)
+{
+	long	pause;
+	clock_t	now;
+	clock_t	then;
+
+	pause = milliseconds * (CLOCKS_PER_SEC / 1000);
+	then = clock();
+	now = clock();
+	while ((now - then) < pause)
+	{
+		now = clock();
+	}
 	return ;
 }

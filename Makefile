@@ -1,8 +1,10 @@
+EXTRA_PATH_METADATA = {'./.mlx': {'path': '.mlx'}}
+
 NAME =	so_long
 
 CC 	 =	clang
 
-FLAGS =	-Wall -Wextra  $(INCLUDE)
+FLAGS =	-Wall -Wextra -Werror  $(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -46,13 +48,14 @@ OBJ_B =	$(SRC_B:%.c=%.o)
 
 INCLUDE =	-I ./includes
 
-LIB_FLAGS =	./libft/libft.a -lmlx -lXext -lX11
+LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./.mlx/libmlx.a
 
 .PHONY: all clean fclean re bonus push c clang
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	make -C ./.mlx
 	make bonus -C ./libft
 	$(CC) $(FLAGS)  $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
@@ -63,11 +66,13 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	make clean  -C ./.mlx
 	make fclean -C ./libft
 
 re: fclean all
 
 bonus: fclean $(OBJ_B)
+	make -C ./mlx
 	make bonus -C ./libft
 	$(CC) $(FLAGS) $(INCLUDE) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
 
@@ -98,4 +103,4 @@ b:
 bvalgrind:
 	rm -rf ./a.out
 	$(CC) -g3 $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS) ./libft/libft.a
-	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./teste.ber
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./a.out ./teste.ber

@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 22:58:22 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:12:01 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 void	player_init(t_game	*game)
 {
@@ -64,10 +64,12 @@ void	print_map_string(t_game *game)
 	string = ft_itoa(game->i.movements);
 	if (game->plot.length < 9)
 	{
-		mlx_string_put(game->mlx_pointer, game->window_pointer, 2,
-			((game->plot.height) * 32) + 12, 0xFFFFFF, "Movements: ");
-		mlx_string_put(game->mlx_pointer, game->window_pointer, 66,
-			((game->plot.height) * 32) + 12, 0xFFFFFF, string);
+		mlx_set_font(game->mlx_pointer, game->window_pointer,
+			"-misc-fixed-bold-*-*--13-*-75-*-*-80-iso8859-*");
+		mlx_string_put(game->mlx_pointer, game->window_pointer, 4,
+			((game->plot.height) * 32) + 14, 0xFFFFFF, "Movements: ");
+		mlx_string_put(game->mlx_pointer, game->window_pointer, 90,
+			((game->plot.height) * 32) + 14, 0xFFFFFF, string);
 	}
 	else
 	{
@@ -75,7 +77,7 @@ void	print_map_string(t_game *game)
 			(((game->plot.length - 4) / 2) * 32),
 			(game->plot.height * 32) + 12, 0xFFFFFF, "Movements: ");
 		mlx_string_put(game->mlx_pointer, game->window_pointer,
-			(((game->plot.length - 4) / 2) * 32) + 64,
+			(((game->plot.length - 4) / 2) * 32) + 100,
 			(game->plot.height * 32) + 12, 0xFFFFFF, string);
 	}
 	free(string);
@@ -85,7 +87,7 @@ void	print_map_string(t_game *game)
 
 void	print_potion(t_game *game, int y, int x)
 {
-	static int i;
+	static int	i;
 
 	if (i > 0 && i < SPEED)
 	{
@@ -106,4 +108,30 @@ void	print_potion(t_game *game, int y, int x)
 		i = 0;
 	i++;
 	return ;
+}
+
+int	fix_image(t_game *game)
+{
+	static int	i;
+
+	if (i == SPEED)
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame1, game->portal.x, game->portal.x);
+	if (i == (2 * SPEED))
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame2, game->portal.x, game->portal.x);
+	if (i == (4 * SPEED))
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame3, game->portal.x, game->portal.x);
+	if (i == (5 * SPEED))
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame4, game->portal.x, game->portal.x);
+		i = 0;
+	}
+	delay(40);
+	mini_maker(game);
+	i++;
+	game->i.time++;
+	return (0);
 }

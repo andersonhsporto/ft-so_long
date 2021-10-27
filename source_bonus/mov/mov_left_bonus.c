@@ -6,18 +6,18 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:29 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 01:12:42 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:12:37 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 static void	check_left(t_game *game)
 {
 	if ((game->character.x > 32))
 	{
 		if ((!(game->plot.map[((game->character.y + 31) / 32)]
-					[((game->character.x -1) / 32)] == '1')) && (
+					[((game->character.x - 1) / 32)] == '1')) && (
 				!(game->plot.map[(game->character.y / 32)]
 					[((game->character.x - 1) / 32)] == '1')))
 		{

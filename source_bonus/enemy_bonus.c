@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 21:20:18 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 22:45:16 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:11:34 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 static void	print_fire(t_game *game, int y, int x)
 {

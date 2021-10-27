@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 01:13:31 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:12:28 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	red_cross(t_game *game)
 {
@@ -23,8 +23,8 @@ int	mini_maker(t_game *game)
 	map_maker(game);
 	if (game->i.movements == 0)
 	{
-			mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-		game->portal.ptr, (game->portal.x), (game->portal.y));
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal.ptr, (game->portal.x), (game->portal.y));
 		player_init(game);
 	}
 	if (game->character.mem == down)
@@ -76,4 +76,26 @@ int	check_arg(const char *argv)
 			return (1);
 	}
 	return (0);
+}
+
+void	init_so_long(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	game->mlx_pointer = mlx_init();
+	mlx_get_screen_size(game->mlx_pointer, &i, &j);
+	if (((game->plot.length * 32) > i) || ((game->plot.height * 32) > j))
+		endgame("Map size larger than display resolution", game, 1);
+	{
+		game->window_pointer = mlx_new_window(game->mlx_pointer,
+				(game->plot.length * 32), ((game->plot.height * 32) + 16),
+				"./so_long");
+		mlx_set_font(game->mlx_pointer, game->window_pointer,
+			"-bitstream-*-*-*-*-*-*-*-*");
+	}
+	if (!game->i.movements)
+		game->i.movements = 0;
 }

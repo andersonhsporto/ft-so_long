@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 20:49:33 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:12:52 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	key_check(int keycode, t_game *game)
 {
@@ -31,7 +31,7 @@ int	key_check(int keycode, t_game *game)
 void	print_moves(t_game *game)
 {
 	game->i.movements += 1;
-	if (game->plot.map[game->character.y / 32][(game->character.x)/ 32] == 'C')
+	if (game->plot.map[game->character.y / 32][(game->character.x) / 32] == 'C')
 	{
 		game->plot.map[game->character.y / 32][game->character.x / 32] = '0';
 		game->i.collectible--;

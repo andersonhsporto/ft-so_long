@@ -6,34 +6,16 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 23:09:40 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/26 23:11:39 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
-
-void	init_so_long(t_game *game)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	game->mlx_pointer = mlx_init();
-	mlx_get_screen_size(game->mlx_pointer, &i, &j);
-	if (((game->plot.length  * 32) > i) || ((game->plot.height * 32) > j))
-		endgame("Map size larger than display resolution", game, 1);
-	game->window_pointer = mlx_new_window(game->mlx_pointer,
-			(game->plot.length * 32), ((game->plot.height* 32) + 16), "./so_long");
-	if (!game->i.movements)
-		game->i.movements = 0;
-}
-
+#include "so_long_bonus.h"
 
 void	init_sprites(t_game	*game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -43,10 +25,14 @@ void	init_sprites(t_game	*game)
 	init_link_right(game, i, j);
 	init_link_up(game, i, j);
 	init_enemies(game, i, j);
-	game->portal_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p1.xpm", &i, &j);
-	game->portal_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p2.xpm", &i, &j);
-	game->portal_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p3.xpm", &i, &j);
-	game->portal_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer, "./img/portal/p4.xpm", &i, &j);
+	game->portal_a.frame1 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/portal/p1.xpm", &i, &j);
+	game->portal_a.frame2 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/portal/p2.xpm", &i, &j);
+	game->portal_a.frame3 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/portal/p3.xpm", &i, &j);
+	game->portal_a.frame4 = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./img/portal/p4.xpm", &i, &j);
 	return ;
 }
 
@@ -76,6 +62,9 @@ t_img	new_sprite(void *mlx, char *path)
 {
 	t_img	img;
 
+	img.x = 0;
+	img.y = 0;
+	img.mem = 0;
 	img.ptr = mlx_xpm_file_to_image(mlx, path, &img.x, &img.y);
 	return (img);
 }
