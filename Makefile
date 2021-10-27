@@ -1,10 +1,10 @@
-EXTRA_PATH_METADATA = {'./.mlx': {'path': '.mlx'}}
+##EXTRA_PATH_METADATA = {'./.mlx': {'path': '.mlx'}}
 
 NAME =	so_long
 
 CC 	 =	clang
 
-FLAGS =	-Wall -Wextra -Werror  $(INCLUDE)
+FLAGS =	-Wall -Wextra -Werror	$(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -13,15 +13,15 @@ GNL = 	gnl/
 SOURCE_B =./source_bonus/
 MOVE_B =	mov/
 
-GNSRC = $(addprefix $(GNL), \
+GNSRC = 	$(addprefix $(GNL), \
 		get_next_line_bonus.c get_next_line_utils_bonus.c \
 )
 
-MSRC =	$(addprefix $(MOVE), \
+MSRC =		$(addprefix $(MOVE), \
 		mov_left.c mov_right.c mov_up.c mov_down.c mov_utils.c \
 )
 
-A_SRC =	$(addprefix $(SOURCE), \
+A_SRC =		$(addprefix $(SOURCE), \
 		$(MSRC) \
 		so_long.c window.c images.c map.c \
 		map_update.c \
@@ -48,16 +48,19 @@ OBJ_B =	$(SRC_B:%.c=%.o)
 
 INCLUDE =	-I ./includes
 
-LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./.mlx/libmlx.a
-
-.PHONY: all clean fclean re bonus push c clang
+LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./mlx/libmlx.a
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	make -C ./.mlx
+	make -C ./mlx
 	make bonus -C ./libft
 	$(CC) $(FLAGS)  $(OBJ) $(LIB_FLAGS) -o $(NAME)
+
+bonus: fclean $(OBJ_B)
+	make -C ./mlx
+	make bonus -C ./libft
+	$(CC) $(FLAGS) $(INCLUDE) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ) $(OBJ_B)
@@ -66,22 +69,17 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	make clean  -C ./.mlx
+	make clean  -C ./mlx
 	make fclean -C ./libft
 
 re: fclean all
 
-bonus: fclean $(OBJ_B)
-	make -C ./mlx
-	make bonus -C ./libft
-	$(CC) $(FLAGS) $(INCLUDE) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
+.PHONY: all bonus clean fclean re
 
 c:
 	rm -rf ./a.out
 	$(CC) $(FLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	./a.out ./teste.ber
-
-clang: c
 
 valgrind:
 	rm -rf ./a.out
@@ -89,9 +87,9 @@ valgrind:
 	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./teste.ber
 
 
-push:
+push: fclean
 	git add .
-	@read -p "Message:" message; \
+	read -p "Message:" message; \
 	git commit -m "$$message"; \
 	git push
 
