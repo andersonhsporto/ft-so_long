@@ -1,5 +1,6 @@
 {
 	"recommendations": [
-		"kube.42header"
+		"kube.42header",
+		"evan-buss.font-switcher"
 	]
 }

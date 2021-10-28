@@ -43,22 +43,24 @@ SRC =	$(A_SRC) $(GNSRC)
 
 SRC_B = $(A_SRC_B) $(GNSRC)
 
-OBJ =	$(SRC:%.c=%.o)
+OBJ = $(SRC:%.c=%.o)
 
 OBJ_B =	$(SRC_B:%.c=%.o)
 
 LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./mlx/libmlx.a
 
-all: fclean $(NAME)
+all: $(NAME)
 
-bonus: fclean $(NAME_BONUS)
+bonus: $(NAME_BONUS)
 
 $(NAME): $(OBJ)
+	rm -rf $(NAME)
 	make -C ./mlx
 	make bonus -C ./libft
 	$(CC) $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_B)
+	rm -rf $(NAME)
 	make -C ./mlx
 	make bonus -C ./libft
 	$(CC) $(FLAGS) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
@@ -77,6 +79,7 @@ re: fclean all
 
 .PHONY: all bonus clean fclean re
 
+
 c:
 	rm -rf ./a.out
 	$(CC) $(FLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
@@ -87,12 +90,6 @@ valgrind:
 	$(CC) -g3 $(FLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./map/medium.ber
 
-push: fclean
-	git add .
-	read -p "Message:" message; \
-	git commit -m "$$message"; \
-	git push
-
 b:
 	rm -rf ./a.out
 	$(CC) $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
@@ -102,3 +99,9 @@ bvalgrind:
 	rm -rf ./a.out
 	$(CC) -g3 $(FLAGS) $(SRC_B) $(LIB_FLAGS) ./libft/libft.a
 	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./a.out ./teste.ber
+
+push: fclean
+	git add .
+	read -p "Message:" message; \
+	git commit -m "$$message"; \
+	git push
