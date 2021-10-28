@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/25 17:36:11 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 00:32:33 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 		i++;
 	}
 	if (!(cnt.collectible > 0 && cnt.exit > 0 && cnt
-			.start == 1))
-		endgame("Invalid, file!", game, 1);
+			.start == 1 && cnt.empty > 0))
+		endgame("Invalid, file!", game, 3);
 	return (cnt);
 }
 
@@ -115,7 +115,7 @@ void	init_map(t_game *game, char *path)
 	while (fd)
 	{
 		game->plot.line = get_next_line(fd);
-		if (!game->plot.line)
+		if (game->plot.line == NULL)
 			break ;
 		game->plot.temp = gnl_strjoin(game->plot.temp, game->plot.line);
 		free(game->plot.line);

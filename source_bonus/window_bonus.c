@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/26 23:12:28 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 01:02:46 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../includes/so_long_bonus.h"
 
 int	red_cross(t_game *game)
 {
@@ -88,7 +88,13 @@ void	init_so_long(t_game *game)
 	game->mlx_pointer = mlx_init();
 	mlx_get_screen_size(game->mlx_pointer, &i, &j);
 	if (((game->plot.length * 32) > i) || ((game->plot.height * 32) > j))
-		endgame("Map size larger than display resolution", game, 1);
+	{
+		free_map(game);
+		mlx_destroy_display(game->mlx_pointer);
+		free(game->mlx_pointer);
+		endgame("Map size larger than display resolution", game, 2);
+	}
+	else
 	{
 		game->window_pointer = mlx_new_window(game->mlx_pointer,
 				(game->plot.length * 32), ((game->plot.height * 32) + 16),
@@ -96,6 +102,4 @@ void	init_so_long(t_game *game)
 		mlx_set_font(game->mlx_pointer, game->window_pointer,
 			"-bitstream-*-*-*-*-*-*-*-*");
 	}
-	if (!game->i.movements)
-		game->i.movements = 0;
 }

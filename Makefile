@@ -1,10 +1,11 @@
-##EXTRA_PATH_METADATA = {'./.mlx': {'path': '.mlx'}}
-
 NAME =	so_long
+NAME_BONUS = so_long_bonus
 
 CC 	 =	clang
 
-FLAGS =	-Wall -Wextra -Werror	$(INCLUDE)
+INCLUDE = -I ./includes
+
+FLAGS =	-Wall -Wextra -Werror
 
 SOURCE =./source/
 MOVE =	mov/
@@ -46,21 +47,21 @@ OBJ =	$(SRC:%.c=%.o)
 
 OBJ_B =	$(SRC_B:%.c=%.o)
 
-INCLUDE =	-I ./includes
-
 LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./mlx/libmlx.a
 
-all: $(NAME)
+all: fclean $(NAME)
+
+bonus: fclean $(NAME_BONUS)
 
 $(NAME): $(OBJ)
 	make -C ./mlx
 	make bonus -C ./libft
-	$(CC) $(FLAGS)  $(OBJ) $(LIB_FLAGS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
-bonus: fclean $(OBJ_B)
+$(NAME_BONUS): $(OBJ_B)
 	make -C ./mlx
 	make bonus -C ./libft
-	$(CC) $(FLAGS) $(INCLUDE) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ) $(OBJ_B)
@@ -68,7 +69,7 @@ clean:
 	make clean -C ./libft
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(NAME_BONUS)
 	make clean  -C ./mlx
 	make fclean -C ./libft
 
@@ -78,14 +79,13 @@ re: fclean all
 
 c:
 	rm -rf ./a.out
-	$(CC) $(FLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
-	./a.out ./teste.ber
+	$(CC) $(FLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
+	./a.out ./map/medium.ber
 
 valgrind:
 	rm -rf ./a.out
 	$(CC) -g3 $(FLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
-	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./teste.ber
-
+	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./map/medium.ber
 
 push: fclean
 	git add .
@@ -95,10 +95,10 @@ push: fclean
 
 b:
 	rm -rf ./a.out
-	$(CC) $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS) ./libft/libft.a
-	./a.out ./teste.ber
+	$(CC) $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
+	./a.out ./map/medium_fire.ber
 
 bvalgrind:
 	rm -rf ./a.out
-	$(CC) -g3 $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS) ./libft/libft.a
+	$(CC) -g3 $(FLAGS) $(SRC_B) $(LIB_FLAGS) ./libft/libft.a
 	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./a.out ./teste.ber

@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/22 03:01:59 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/27 21:13:49 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	mini_maker(t_game *game)
 	if (game->i.movements == 0)
 	{
 		player_init(game);
-		//enemy_init(game);
 	}
 	if (game->character.mem == down)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
@@ -53,6 +52,12 @@ void	endgame(char *message, t_game *game, int i)
 	if (i == 2)
 	{
 		printf(RED"Error\n%s\n"ENDC, message);
+		exit(1);
+	}
+	if (i == 3)
+	{
+		printf(RED"Error\n%s\n"ENDC, message);
+		free(game->plot.temp);
 		exit(1);
 	}
 	printf(RED"Error\n%s\n"ENDC, message);

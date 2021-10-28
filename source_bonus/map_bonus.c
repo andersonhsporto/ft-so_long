@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 00:19:39 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 00:33:00 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../includes/so_long_bonus.h"
 
 static void	check_map_maker(t_game *game, int y, int x)
 {
@@ -103,8 +103,8 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 		i++;
 	}
 	if (!(cnt.collectible > 0 && cnt.exit > 0 && cnt
-			.start == 1))
-		endgame("Invalid, file!", game, 1);
+			.start == 1 && cnt.empty > 0))
+		endgame("Invalid, file!", game, 3);
 	return (cnt);
 }
 
@@ -120,7 +120,7 @@ void	init_map(t_game *game, char *path)
 	while (fd)
 	{
 		game->plot.line = get_next_line(fd);
-		if (!game->plot.line)
+		if (game->plot.line == NULL)
 			break ;
 		game->plot.temp = gnl_strjoin(game->plot.temp, game->plot.line);
 		free(game->plot.line);

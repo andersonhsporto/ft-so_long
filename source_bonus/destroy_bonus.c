@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 23:07:54 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/26 23:11:32 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/27 20:22:25 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../includes/so_long_bonus.h"
 
 static void	destroy_collec_old(t_game *game)
 {

@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/26 19:34:38 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 01:09:16 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,18 @@ void	init_so_long(t_game *game)
 	game->mlx_pointer = mlx_init();
 	mlx_get_screen_size(game->mlx_pointer, &i, &j);
 	if (((game->plot.length * 32) > i) || ((game->plot.height * 32) > j))
-		endgame("Map size larger than monitor", game, 1); // comments
-	game->window_pointer = mlx_new_window(game->mlx_pointer,
-			(game->plot.length * 32), (game->plot.height * 32), "./so_long");
-	if (!game->i.movements)
-		game->i.movements = 0;
+	{
+		free_map(game);
+		mlx_destroy_display(game->mlx_pointer);
+		free(game->mlx_pointer);
+		endgame("Map size larger than display resolution", game, 2);
+	}
+	else
+	{
+		game->window_pointer = mlx_new_window(game->mlx_pointer,
+				(game->plot.length * 32), (game->plot.height * 32),
+				"./so_long");
+	}
 }
 
 void	init_images(t_game	*game)

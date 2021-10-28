@@ -6,14 +6,14 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:02:09 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/08/05 15:30:50 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 00:25:58 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
-{	
+{
 	unsigned char	*str;
 	size_t			i;
 
