@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 23:03:28 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 20:22:45 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 20:26:12 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 void	init_link_down(t_game *game, int i, int j)
 {

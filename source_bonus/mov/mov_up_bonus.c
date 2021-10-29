@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:14 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 20:21:13 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 20:30:58 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 static void	check_up(t_game *game)
 {

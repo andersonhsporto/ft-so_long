@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 01:02:46 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 22:52:19 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	red_cross(t_game *game)
 {
@@ -56,6 +56,12 @@ void	endgame(char *message, t_game *game, int i)
 		printf(RED"Error\n%s\n"ENDC, message);
 		exit(1);
 	}
+	if (i == 3)
+	{
+		printf(RED"Error\n%s\n"ENDC, message);
+		free(game->plot.temp);
+		exit(1);
+	}
 	printf(RED"Error\n%s\n"ENDC, message);
 	destroy_image(game);
 	exit(1);
@@ -99,7 +105,5 @@ void	init_so_long(t_game *game)
 		game->window_pointer = mlx_new_window(game->mlx_pointer,
 				(game->plot.length * 32), ((game->plot.height * 32) + 16),
 				"./so_long");
-		mlx_set_font(game->mlx_pointer, game->window_pointer,
-			"-bitstream-*-*-*-*-*-*-*-*");
 	}
 }

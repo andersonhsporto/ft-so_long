@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 20:22:55 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 22:56:05 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 void	player_init(t_game	*game)
 {
@@ -64,11 +64,9 @@ void	print_map_string(t_game *game)
 	string = ft_itoa(game->i.movements);
 	if (game->plot.length < 9)
 	{
-		mlx_set_font(game->mlx_pointer, game->window_pointer,
-			"-misc-fixed-bold-*-*--13-*-75-*-*-80-iso8859-*");
 		mlx_string_put(game->mlx_pointer, game->window_pointer, 4,
 			((game->plot.height) * 32) + 14, 0xFFFFFF, "Movements: ");
-		mlx_string_put(game->mlx_pointer, game->window_pointer, 90,
+		mlx_string_put(game->mlx_pointer, game->window_pointer, 68,
 			((game->plot.height) * 32) + 14, 0xFFFFFF, string);
 	}
 	else

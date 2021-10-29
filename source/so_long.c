@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 22:16:45 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 22:16:30 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int argc, char **argv)
 
 	if (argc == 2 && (check_arg(argv[1])))
 	{
-		game.character.mem = 0;
 		init_map(&game, argv[1]);
 		init_so_long(&game);
 		init_images(&game);

@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 20:21:17 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 20:31:04 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	key_check(int keycode, t_game *game)
 {

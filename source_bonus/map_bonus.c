@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 00:33:00 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/29 00:40:10 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 static void	check_map_maker(t_game *game, int y, int x)
 {
@@ -46,15 +46,15 @@ static void	map_check_one(t_game *game, int y, int x)
 			[game->plot.length - 1] != '1') || (game->plot.map[y]
 			[0] != '1'))
 	{
-		endgame("Not surrounded by trees!", game, 1);
+		endgame("Not surrounded by trees!", game, 4);
 	}
 	if (game->plot.height == game->plot.length)
 	{
-		endgame("Map is not rectangular!", game, 1);
+		endgame("Map is not rectangular!", game, 4);
 	}
 	if (!(ft_strchr("01CEPFf", game->plot.map[y][x])))
 	{
-		endgame("Invalid character in map", game, 1);
+		endgame("Invalid character in map", game, 4);
 	}
 	check_map_maker(game, y, x);
 	return ;
@@ -91,7 +91,7 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 	while (string_map[i] != '\0')
 	{
 		if ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])))
-			endgame("Invalid, file!", game, 1);
+			endgame("Invalid, files!", game, 3);
 		if (string_map[i] == 'C')
 			cnt.collectible++;
 		else if (string_map[i] == 'E')

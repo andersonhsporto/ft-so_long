@@ -5,7 +5,7 @@ CC 	 =	clang
 
 INCLUDE = -I ./includes
 
-FLAGS =	-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror  $(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -57,13 +57,13 @@ $(NAME): $(OBJ)
 	rm -rf $(NAME)
 	make -C ./mlx
 	make bonus -C ./libft
-	$(CC) $(FLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_B)
 	rm -rf $(NAME)
 	make -C ./mlx
 	make bonus -C ./libft
-	$(CC) $(FLAGS) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ) $(OBJ_B)
@@ -92,13 +92,13 @@ valgrind:
 
 b:
 	rm -rf ./a.out
-	$(CC) $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
+	$(CC) -O3 $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
 	./a.out ./map/medium_fire.ber
 
 bvalgrind:
 	rm -rf ./a.out
-	$(CC) -g3 $(FLAGS) $(SRC_B) $(LIB_FLAGS) ./libft/libft.a
-	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./a.out ./teste.ber
+	$(CC) -g $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
+	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./map/medium_fire.ber
 
 push: fclean
 	git add .

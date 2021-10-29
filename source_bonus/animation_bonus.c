@@ -6,11 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 02:37:10 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 20:22:19 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/28 20:25:55 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	fix_pos(int keycode, t_game *game)
 {
