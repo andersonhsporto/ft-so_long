@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 22:56:05 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/30 00:48:51 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,26 +110,8 @@ void	print_potion(t_game *game, int y, int x)
 
 int	fix_image(t_game *game)
 {
-	static int	i;
-
-	if (i == SPEED)
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->portal_a.frame1, game->portal.x, game->portal.x);
-	if (i == (2 * SPEED))
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->portal_a.frame2, game->portal.x, game->portal.x);
-	if (i == (4 * SPEED))
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->portal_a.frame3, game->portal.x, game->portal.x);
-	if (i == (5 * SPEED))
-	{
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->portal_a.frame4, game->portal.x, game->portal.x);
-		i = 0;
-	}
 	delay(40);
 	mini_maker(game);
-	i++;
 	game->i.time++;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:14 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 20:30:58 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/29 00:56:10 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static void	check_up(t_game *game)
 				!(game->plot.map[((game->character.y - 4) / 32)]
 					[((game->character.x + 31) / 32)] == '1')))
 		{
+			mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+				game->floor.ptr, (game->character.x), (game->character.y));
 			game->character.y -= 4;
 			print_moves(game);
 		}

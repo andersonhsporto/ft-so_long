@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/29 00:40:10 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/30 00:52:29 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	check_map_maker(t_game *game, int y, int x)
 	{
 		game->portal.x = x * 32;
 		game->portal.y = y * 32;
+		print_portal(game);
 	}
 	else if (game->plot.map[y][x] == '1')
 	{
@@ -102,7 +103,7 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 			cnt.empty++;
 		i++;
 	}
-	if (!(cnt.collectible > 0 && cnt.exit > 0 && cnt
+	if (!(cnt.collectible > 0 && cnt.exit == 1 && cnt
 			.start == 1 && cnt.empty > 0))
 		endgame("Invalid, file!", game, 3);
 	return (cnt);

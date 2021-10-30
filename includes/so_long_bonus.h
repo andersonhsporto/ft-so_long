@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 00:21:15 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/30 00:54:54 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,11 @@ int		mini_maker(t_game *game);
 void	endgame(char *message, t_game *game, int i);
 int		check_arg(const char *argv);
 
-//animation
-
 int		fix_image(t_game *game);
 
-//-image file
 void	init_sprites(t_game	*game);
 int		fix_pos(int keycode, t_game *game);
 void	put_image(t_game *game, void *frame);
-
-//enemies
 
 void	print_map_string(t_game *game);
 void	print_potion(t_game *game, int y, int x);
@@ -79,4 +74,5 @@ void	init_link_left(t_game *game, int i, int j);
 void	init_link_up(t_game *game, int i, int j);
 void	init_collec(t_game *game, int i, int j);
 
+void	print_portal(t_game *game);
 #endif

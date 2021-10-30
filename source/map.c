@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/29 00:41:24 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/29 22:44:48 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 			cnt.empty++;
 		i++;
 	}
-	if (!(cnt.collectible > 0 && cnt.exit > 0 && cnt
+	if (!(cnt.collectible > 0 && cnt.exit == 1 && cnt
 			.start == 1 && cnt.empty > 0))
 		endgame("Invalid, file!", game, 3);
 	return (cnt);

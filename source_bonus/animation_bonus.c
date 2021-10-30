@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 02:37:10 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 20:25:55 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/30 00:52:05 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,31 @@ void	put_image(t_game *game, void *frame)
 {
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 		frame, game->character.x, game->character.y);
+	return ;
+}
+
+void	print_portal(t_game *game)
+{
+	static int	i;
+
+	if (i > 0 && i < SPEED)
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame1, game->portal.x, game->portal.x);
+	}
+	if (i >= SPEED && i < (SPEED * 4))
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame2, game->portal.x, game->portal.x);
+	}
+	if (i >= (SPEED * 4) && i < (SPEED * 8))
+	{
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+			game->portal_a.frame3, game->portal.x, game->portal.x);
+	}
+	if (i == (SPEED * 8))
+		i = 0;
+	i++;
 	return ;
 }
 

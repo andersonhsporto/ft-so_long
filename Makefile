@@ -5,7 +5,7 @@ CC 	 =	clang
 
 INCLUDE = -I ./includes
 
-CFLAGS = -Wall -Wextra -Werror  $(INCLUDE)
+CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 
 SOURCE =./source/
 MOVE =	mov/
@@ -82,22 +82,22 @@ re: fclean all
 
 c:
 	rm -rf ./a.out
-	$(CC) $(FLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
+	$(CC) $(CFLAGS) $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	./a.out ./map/medium.ber
 
 valgrind:
 	rm -rf ./a.out
-	$(CC) -g3 $(FLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
+	$(CC) -g3 $(CFLAGS) $(INCLUDE) $(SRC) $(LIB_FLAGS) ./libft/libft.a
 	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./map/medium.ber
 
 b:
 	rm -rf ./a.out
-	$(CC) -O3 $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
+	$(CC) -O3 $(CFLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
 	./a.out ./map/medium_fire.ber
 
 bvalgrind:
 	rm -rf ./a.out
-	$(CC) -g $(FLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
+	$(CC) -g $(CFLAGS) $(INCLUDE) $(SRC_B) $(LIB_FLAGS)
 	valgrind --leak-check=full --show-leak-kinds=all ./a.out ./map/medium_fire.ber
 
 push: fclean
