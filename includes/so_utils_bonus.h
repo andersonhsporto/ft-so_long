@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/30 01:23:15 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/10/30 02:19:58 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ enum e_direction
 typedef struct s_counter
 {
 	int		empty;
-	unsigned int collectible;
+	int		collectible;
 	int		exit;
 	int		start;
 	int		movements;
