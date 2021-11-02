@@ -1,0 +1,3 @@
+[submodule "gnl"]
+	path = gnl
+	url = https://github.com/andersonhsporto/ft-get-next-line.git
