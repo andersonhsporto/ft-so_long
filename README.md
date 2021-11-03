@@ -13,13 +13,13 @@ Compile a parte **mandatória** utilizando:
 ```sh
 make
 ```
-<img width="900px" src=https://github.com/andersonhsporto/ft-so_long/blob/main/img/mandat%C3%B3rio.png alt="mandatory"/>
+![mandatory](https://github.com/andersonhsporto/ft-so_long/blob/main/img/Peek%2003-11-2021%2000-16.gif)
 
 Para compilar a parte **bonus** (animação, contador de movimentos e inimigos) utilize:
 ```sh
 make bonus
 ```
-<img width="900px" src=https://github.com/andersonhsporto/ft-so_long/blob/main/img/bonus.png alt="bonus"/>
+![bonus](https://github.com/andersonhsporto/ft-so_long/blob/main/img/Peek%2003-11-2021%2000-23.gif)
 
 
 
