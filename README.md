@@ -1,5 +1,5 @@
 # so_long
-### Um pequeno jogo 2D. Feito para trabalhar com texturas, sprites. E alguns elementos básicos de jogabilidade.
+### Um pequeno jogo 2D. Feito com alguns elementos básicos de jogabilidade. 
 ---
 O objetivo deste projeto é criar um jogo utilizando a biblioteca [MinilibX](https://github.com/42Paris/minilibx-linux).
 
