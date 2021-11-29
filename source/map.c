@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/29 22:44:48 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/11/29 23:38:24 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void	init_map(t_game *game, char *path)
 		game->plot.line = get_next_line(fd);
 		if (game->plot.line == NULL)
 			break ;
-		game->plot.temp = gnl_strjoin(game->plot.temp, game->plot.line);
+		game->plot.temp = gnl_strjoinfree(game->plot.temp, game->plot.line);
 		free(game->plot.line);
 		game->plot.height++;
 	}
