@@ -56,7 +56,7 @@ bonus: $(NAME_BONUS)
 $(NAME): $(OBJ)
 	rm -rf $(NAME)
 	make -C ./mlx
-	make bonus -C ./libft
+	make all -C ./libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_B)
