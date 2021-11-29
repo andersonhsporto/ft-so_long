@@ -1,11 +1,11 @@
 NAME =	so_long
 NAME_BONUS = so_long_bonus
 
-CC 	 =	clang
+CC 	 =	gcc
 
 INCLUDE = -I ./includes
 
-CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
+CFLAGS = -Wall -Wextra -Werror
 
 SOURCE =./source/
 MOVE =	mov/
@@ -52,6 +52,9 @@ LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./mlx/libmlx.a
 all: $(NAME)
 
 bonus: $(NAME_BONUS)
+
+.c.o:
+	$(CC) $(CFLAGS) $(INCLUDE) -O2 -c $< -o $@
 
 $(NAME): $(OBJ)
 	rm -rf $(NAME)
