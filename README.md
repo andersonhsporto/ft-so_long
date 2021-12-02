@@ -5,7 +5,7 @@ O objetivo deste projeto é criar um jogo utilizando a biblioteca [MinilibX](htt
 
 ## Instalação
 
-Clone este reppósitorio utilizando 
+Clone este repósitorio utilizando 
 ```sh
 git clone https://github.com/andersonhsporto/ft-so_long.git
 ```
