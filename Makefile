@@ -1,3 +1,5 @@
+EXTRA_PATH_METADATA = {'so_long/.mlx': {'path': '.mlx'}}
+
 NAME =	so_long
 NAME_BONUS = so_long_bonus
 
@@ -47,7 +49,7 @@ OBJ = $(SRC:%.c=%.o)
 
 OBJ_B =	$(SRC_B:%.c=%.o)
 
-LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./mlx/libmlx.a
+LIB_FLAGS =	./libft/libft.a -lXext -lX11 ./.mlx/libmlx.a
 
 all: $(NAME)
 
@@ -58,13 +60,13 @@ bonus: $(NAME_BONUS)
 
 $(NAME): $(OBJ)
 	rm -rf $(NAME)
-	make -C ./mlx
+	make -C ./.mlx
 	make all -C ./libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIB_FLAGS) -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_B)
 	rm -rf $(NAME)
-	make -C ./mlx
+	make -C ./.mlx
 	make bonus -C ./libft
 	$(CC) $(CFLAGS) $(OBJ_B) $(LIB_FLAGS) -o $(NAME)
 
@@ -75,7 +77,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME) $(NAME_BONUS)
-	make clean  -C ./mlx
+	make clean  -C ./.mlx
 	make fclean -C ./libft
 
 re: fclean all

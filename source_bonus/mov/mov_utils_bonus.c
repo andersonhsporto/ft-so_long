@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/30 01:36:28 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/12/17 14:59:11 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static int	check_win(t_game *game)
 		&& game->i.collectible == 0 && (game->plot.map[game->character.y / 32]
 		[((game->character.x + 30) / 32)] == 'E' ))
 		return (1);
-	else if (((game->plot.map[(game->character.y + 16 ) / 32]
+	else if (((game->plot.map[(game->character.y + 16) / 32]
 				[game->character.x / 32] == 'E') && game->i.collectible == 0
-			&& (game->plot.map[(game->character.y + 16 ) / 32]
+			&& (game->plot.map[(game->character.y + 16) / 32]
 				[((game->character.x + 30) / 32)] == 'E' )))
 		return (1);
 	return (0);
