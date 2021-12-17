@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/11/29 23:38:24 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2021/12/17 15:16:52 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,9 @@ static void	check_map_maker(t_game *game, int y, int x)
 
 static void	map_check_one(t_game *game, int y, int x)
 {
-	if ((game->plot.map[game->plot.height - 1][x] != '1') ||
-			(game->plot.map[0][x] != '1') || (game->plot.map[y]
-			[game->plot.length - 1] != '1') || (game->plot.map[y]
-			[0] != '1'))
+	if ((game->plot.map[game->plot.height - 1][x] != '1') || \
+		(game->plot.map[0][x] != '1') || (game->plot.map[y] \
+		[game->plot.length - 1] != '1') || (game->plot.map[y][0] != '1'))
 	{
 		endgame("Not surrounded by trees!", game, 4);
 	}
