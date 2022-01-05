@@ -1,6 +1,7 @@
 # so_long
 ![norminette](https://github.com/andersonhsporto/ft-so_long/workflows/norminette/badge.svg)
 ### O objetivo deste projeto é criar um jogo básico utilizando a biblioteca [MinilibX](https://github.com/42Paris/minilibx-linux).
+<hr>
 
 ## Instalação
 
