@@ -7,7 +7,7 @@
 
 Clone este repósitorio utilizando:
 ```sh
-git clone https://github.com/andersonhsporto/ft-so_long.git
+git clone --recursive https://github.com/andersonhsporto/ft-so_long.git
 ```
 Compile a parte **mandatória** utilizando:
 ```sh
