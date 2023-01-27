@@ -16,7 +16,7 @@ O objetivo deste projeto é criar um jogo com elementos 2D utilizando a bibliote
 
 ## Instalação
 
-Este repositório utiliza a biblioteca extena [Libft](https://github.com/andersonhsporto/ft-libft)
+Este repositório utiliza a biblioteca extena [Libft](https://github.com/andersonhsporto/ft-libft),
 para compilar o projeto é necessário clonar o repositório com o comando:
 
 ```sh
