@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:29 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 21:22:55 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:26:37 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void	check_left(t_game *game)
 {
 	if ((game->character.x > 32))
 	{
-		if (!(game->plot.map[(game->character.y / 32)]
-				[((game->character.x - 32) / 32)] == '1'))
+		if (game->plot.map[(game->character.y / 32)]
+			[((game->character.x - 32) / 32)] != '1')
 		{
 			game->character.x -= 32;
 			map_maker(game);
