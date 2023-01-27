@@ -24,7 +24,7 @@ git clone --recursive https://github.com/andersonhsporto/ft-so_long.git
 ```
 
 O projeto é dividido em duas partes, a **mandatória** e a **bonus**.
-Para compilar o projeto é necessário utilizar o comando:
+
 
 Para compilar a parte **mandatória** (movimentação do personagem e coleta de itens) utilize:
 ```sh
