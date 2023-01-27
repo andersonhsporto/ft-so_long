@@ -1,0 +1,65 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Clion project files
+.idea
+
+# Eclipse project files
+.settings
+.cproject
+.project
+
+# Vscode project files
+.vscode
+
+# Javascript project files
+*.js
+
+# Binary files
+*replace
+vector_test
+
+# Valgrind files
+callgrind*
+vgcore*
+
+# Binary files
+*replace
+test
+test_ft
+test_std
+
+/containers_test/
+webserv
+
+so_long
