@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 19:11:28 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:28:24 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,7 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 {
 	t_counter	cnt;
 
-	cnt.collectible = 0;
-	cnt.start = 0;
-	cnt.exit = 0;
-	cnt.movements = 0;
-	cnt.empty = 0;
+	cnt = new_counter();
 	while (string_map[i] != '\0')
 	{
 		if ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])))
@@ -101,25 +97,24 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 
 void	init_map(t_game *game, char *path)
 {
-	int	fd;
+	int		fd;
+	char	*temp;
 
-	fd = open(path, O_RDONLY);
-	if (fd < 0)
-		endgame("Can't find file!", game, 2);
-	game->plot.temp = ft_strdup("");
+	fd = open_file(path);
+	temp = ft_strdup("");
 	game->plot.height = 0;
 	while (fd)
 	{
 		game->plot.line = get_next_line(fd);
 		if (game->plot.line == NULL)
 			break ;
-		game->plot.temp = gnl_strjoinfree(game->plot.temp, game->plot.line);
+		temp = gnl_strjoinfree(temp, game->plot.line);
 		free(game->plot.line);
 		game->plot.height++;
 	}
-	game->i = start_counter(game->plot.temp, game, 0);
-	game->plot.map = ft_split(game->plot.temp, '\n');
-	free(game->plot.temp);
+	game->i = start_counter(temp, game, 0);
+	game->plot.map = ft_split(temp, '\n');
+	free(temp);
 	game->plot.length = len_map(game->plot.map, game);
 	close(fd);
 	return ;

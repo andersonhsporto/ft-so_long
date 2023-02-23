@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 19:08:22 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:31:29 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,10 @@ void	destroy_image(t_game *game)
 
 void	free_map(t_game	*game)
 {
-	int	i;
-
-	i = 0;
-	while (game->plot.map[i] != 0)
+	while (game->plot.height > 0)
 	{
-		free(game->plot.map[i]);
-		game->plot.map[i] = NULL;
-		i++;
+		free(game->plot.map[game->plot.height - 1]);
+		game->plot.height--;
 	}
 	free(game->plot.map);
 	return ;
