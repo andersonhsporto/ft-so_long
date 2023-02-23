@@ -6,13 +6,13 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 22:16:30 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:45:29 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(int argc, char **argv)
+int	main(int argc, char *argv[])
 {
 	t_game	game;
 
@@ -33,5 +33,21 @@ int	main(int argc, char **argv)
 		endgame("Can't open multiple files!", &game, 2);
 	else
 		endgame("Please specify file name!", &game, 2);
+	return (0);
+}
+
+int	check_arg(const char	*argv)
+{
+	size_t	len;
+	char	*string;
+
+	len = 0;
+	string = ft_strrchr(argv, '.');
+	if (string)
+	{
+		len = ft_strlen(string);
+		if (ft_memcmp(string, ".ber", len) == 0)
+			return (1);
+	}
 	return (0);
 }

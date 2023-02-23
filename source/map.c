@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/12/17 15:16:52 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:11:28 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,15 @@ static void	check_map_maker(t_game *game, int y, int x)
 
 static void	map_check_one(t_game *game, int y, int x)
 {
-	if ((game->plot.map[game->plot.height - 1][x] != '1') || \
-		(game->plot.map[0][x] != '1') || (game->plot.map[y] \
-		[game->plot.length - 1] != '1') || (game->plot.map[y][0] != '1'))
+	if (!is_surrounded_by_trees(game, y, x))
 	{
 		endgame("Not surrounded by trees!", game, 4);
 	}
-	if (game->plot.height == game->plot.length)
+	if (!is_rectangular(game))
 	{
 		endgame("Map is not rectangular!", game, 4);
 	}
-	if (!(ft_strchr("01CEP", game->plot.map[y][x])))
+	if (!is_valid_character(game, y, x))
 	{
 		endgame("Invalid character in map", game, 4);
 	}
@@ -56,19 +54,18 @@ static void	map_check_one(t_game *game, int y, int x)
 
 void	map_maker(t_game *game)
 {
-	int	y;
-	int	x;
+	t_point	coord;
 
-	y = 0;
-	while (game->plot.map[y])
+	coord.y = 0;
+	while (game->plot.map[coord.y])
 	{
-		x = 0;
-		while (game->plot.map[y][x])
+		coord.x = 0;
+		while (game->plot.map[coord.y][coord.x])
 		{
-			map_check_one(game, y, x);
-			x++;
+			map_check_one(game, coord.y, coord.x);
+			coord.x++;
 		}
-		y++;
+		coord.y++;
 	}
 	return ;
 }

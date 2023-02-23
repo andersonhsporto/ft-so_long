@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 16:36:11 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:08:22 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 void	init_so_long(t_game *game)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
 	game->mlx_pointer = mlx_init();
-	mlx_get_screen_size(game->mlx_pointer, &i, &j);
-	if (((game->plot.length * 32) > i) || ((game->plot.height * 32) > j))
+	if (is_larger_than_window(game))
 	{
 		free_map(game);
 		mlx_destroy_display(game->mlx_pointer);
@@ -32,7 +26,7 @@ void	init_so_long(t_game *game)
 	{
 		game->window_pointer = mlx_new_window(game->mlx_pointer,
 				(game->plot.length * 32), (game->plot.height * 32),
-				"./so_long");
+				WINDOW_NAME);
 	}
 }
 

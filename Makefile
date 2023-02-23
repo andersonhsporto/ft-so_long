@@ -44,8 +44,8 @@ MSRC =		$(addprefix $(MOVE), \
 
 A_SRC =		$(addprefix $(SOURCE), \
 		$(MSRC) \
-		so_long.c window.c images.c map.c \
-		map_update.c \
+		so_long.c 0-window.c images.c map.c \
+		map_update.c 1-map_validation.c 2-screen_validations.c \
 )
 
 MSRC_B =	$(addprefix $(MOVE_B), \

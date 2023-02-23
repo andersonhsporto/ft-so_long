@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/12/17 15:08:45 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:10:49 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <unistd.h>//read, close, write
 # include <stdlib.h>//malloc
 # include <stdio.h>//printf
+# include <stdbool.h>//bool
 
 void	map_maker(t_game	*game);
 void	init_map(t_game *game, char *path);
@@ -49,4 +50,10 @@ int		mini_maker(t_game *game);
 void	endgame(char *message, t_game *game, int i);
 int		check_arg(const char *argv);
 
+t_point	get_screen_size(t_game *game);
+bool	is_larger_than_window(t_game *game);
+
+bool	is_surrounded_by_trees(t_game *game, int y, int x);
+bool	is_rectangular(t_game *game);
+bool	is_valid_character(t_game *game, int y, int x);
 #endif
