@@ -13,14 +13,13 @@ O objetivo deste projeto é criar um jogo com elementos 2D utilizando a bibliote
 <br>
 
 
-
 ## Instalação
 
-Para compilar o projeto é necessário instalar a biblioteca gráfica [MinilibX](https://github.com/42Paris/minilibx-linux).
+Antes de compilar o projeto é necessário instalar a biblioteca gráfica [MinilibX](https://github.com/42Paris/minilibx-linux).
 
 
 Além desta este projeto utiliza a biblioteca extena [Libft](https://github.com/andersonhsporto/ft-libft),
-para clonar este projeto e a biblioteca externa utilize o comando:
+para clonar este projeto e esta biblioteca utilize o comando:
 
 ```sh
 git clone --recursive https://github.com/andersonhsporto/ft-so_long.git
@@ -57,6 +56,6 @@ O estilo de código utilizado neste projeto é o [Norminette](https://github.com
 ![norminette](https://github.com/andersonhsporto/ft-so_long/workflows/norminette/badge.svg)
 
 
-## REFERÊNCIAS
+## Referências
 * [Harm Smits - MiniLibX](https://harm-smits.github.io/42docs/libs/minilibx)
 * [MiniLibX](https://github.com/42Paris/minilibx-linux)
