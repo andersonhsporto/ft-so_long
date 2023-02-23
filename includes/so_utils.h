@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/21 22:14:22 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:02:11 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define RED	"\033[1m\033[31m"
 # define GREEN	"\033[1m\033[32m"
 # define ENDC	"\033[0m"
+# define WINDOW_NAME	"./so_long"
 
 enum e_direction
 {
@@ -74,5 +75,11 @@ typedef struct s_game
 	t_img		collect;
 	t_img		portal;
 }	t_game;
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}	t_point;
 
 #endif

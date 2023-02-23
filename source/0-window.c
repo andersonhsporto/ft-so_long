@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/27 21:13:49 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:42:56 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,4 @@ void	endgame(char *message, t_game *game, int i)
 	destroy_image(game);
 	exit(1);
 	return ;
-}
-
-int	check_arg(const char	*argv)
-{
-	size_t	len;
-	char	*string;
-
-	len = 0;
-	string = ft_strrchr(argv, '.');
-	if (string)
-	{
-		len = ft_strlen(string);
-		if (ft_memcmp(string, ".ber", len) == 0)
-			return (1);
-	}
-	return (0);
 }
