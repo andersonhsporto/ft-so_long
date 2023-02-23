@@ -25,7 +25,10 @@ para clonar este projeto e a biblioteca externa utilize o comando:
 ```sh
 git clone --recursive https://github.com/andersonhsporto/ft-so_long.git
 ```
-**este comando irá clonar o projeto e a biblioteca** 
+
+**<em>este comando irá clonar o projeto e o submódulo Libft</em>**
+
+</br>
 
 
 O projeto é dividido em duas partes, a **mandatória** e a **bonus**.
