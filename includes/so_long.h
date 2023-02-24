@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 19:29:20 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:54:16 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		move_up(t_game *parameter);
 void		move_down(t_game *parameter);
 
 void		player_init(t_game	*game);
-int			len_map(char **map, t_game *game);
+int			len_map_validation(char **map, t_game *game);
 
 void		init_so_long(t_game *game);
 void		init_images(t_game	*game);
@@ -48,7 +48,7 @@ void		free_map(t_game	*game);
 int			red_cross(t_game *game);
 int			mini_maker(t_game *game);
 void		endgame(char *message, t_game *game, int i);
-int			check_arg(const char *argv);
+bool		check_arg(const char *argv);
 
 t_point		get_screen_size(t_game *game);
 bool		is_larger_than_window(t_game *game);

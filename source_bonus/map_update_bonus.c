@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/11/01 18:34:35 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:54:16 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	player_init(t_game	*game)
 	return ;
 }
 
-int	len_map(char **map, t_game *game)
+int	len_map_validation(char **map, t_game *game)
 {
 	int	i;
 	int	j;
