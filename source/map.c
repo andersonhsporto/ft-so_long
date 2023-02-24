@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 19:28:24 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 22:00:50 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ static void	check_map_maker(t_game *game, int y, int x)
 	{
 		game->portal.x = x * 32;
 		game->portal.y = y * 32;
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->portal.ptr, (32 * x), (32 * y));
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, \
+		game->portal.ptr, (32 * x), (32 * y));
 	}
 	else if (game->plot.map[y][x] == '1')
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->wall.ptr, (32 * x), (32 * y));
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, \
+		game->wall.ptr, (32 * x), (32 * y));
 	else if (game->plot.map[y][x] == 'C')
 	{
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->collect.ptr, (32 * x), (32 * y));
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, \
+		game->collect.ptr, (32 * x), (32 * y));
 	}
 	else
-		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->floor.ptr, (32 * x), (32 * y));
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer, \
+		game->floor.ptr, (32 * x), (32 * y));
 }
 
 static void	map_check_one(t_game *game, int y, int x)
@@ -89,8 +89,8 @@ static t_counter	start_counter(char *string_map, t_game *game, int i)
 			cnt.empty++;
 		i++;
 	}
-	if (!(cnt.collectible > 0 && cnt.exit == 1 && cnt
-			.start == 1 && cnt.empty > 0))
+	if (!(cnt.collectible > 0 && cnt.exit == 1 && \
+	cnt.start == 1 && cnt.empty > 0))
 		endgame("Invalid, file!", game, 3);
 	return (cnt);
 }
@@ -115,7 +115,7 @@ void	init_map(t_game *game, char *path)
 	game->i = start_counter(temp, game, 0);
 	game->plot.map = ft_split(temp, '\n');
 	free(temp);
-	game->plot.length = len_map(game->plot.map, game);
+	game->plot.length = len_map_validation(game->plot.map, game);
 	close(fd);
 	return ;
 }

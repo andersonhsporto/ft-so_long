@@ -6,11 +6,13 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:20:26 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 19:27:43 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:59:16 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+static void	line_validation(char **map, t_game *game);
 
 int	open_file(char *path)
 {
@@ -35,4 +37,30 @@ t_counter	new_counter(void)
 	counter.movements = 0;
 	counter.empty = 0;
 	return (counter);
+}
+
+int	len_map_validation(char **map, t_game *game)
+{
+	line_validation(map, game);
+	return (ft_strlen(map[0]));
+}
+
+static void	line_validation(char **map, t_game *game)
+{
+	int		i;
+	t_point	point;
+
+	i = 0;
+	point.x = 0;
+	point.y = ft_strlen(map[0]);
+	while (map[i] != 0)
+	{
+		point.x = ft_strlen(map[i]);
+		if (point.x != point.y)
+		{
+			free_map(game);
+			endgame("Invalid file: lines are not the same size!", game, 2);
+		}
+		i++;
+	}
 }
