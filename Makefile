@@ -15,7 +15,7 @@ CFLAGS	=	-Wall -Wextra -Werror -lX11
 
 MLX		=   -lmlx -lXext -lX11
 
-LIB_FLAGS =	-L ./1-libft -lft
+LIB_FLAGS =	-L ./0-libft -lft
 
 #####################################################################################
 #####################################################################################
@@ -25,18 +25,12 @@ INCLUDE = -I ./includes
 
 SOURCE =./source/
 MOVE =	mov/
-GNL = 	0-gnl/
-
 SOURCE_B =./source_bonus/
 MOVE_B =	mov/
 
 #####################################################################################
 #####################################################################################
 #####################################################################################
-
-GNSRC = 	$(addprefix $(GNL), \
-		get_next_line_bonus.c get_next_line_utils_bonus.c \
-)
 
 MAP =		$(addprefix 0-map/, \
 		0_map.c 1_map_validation.c 2_map_update.c 3_map_utils.c \
@@ -50,7 +44,6 @@ WINDOW =	$(addprefix 1-window/, \
 MSRC =		$(addprefix 2-movements/, \
 		mov_left.c mov_right.c mov_up.c mov_down.c mov_utils.c \
 )
-
 
 A_SRC =		$(addprefix $(SOURCE), \
 		$(MSRC) $(MAP) $(WINDOW) \
@@ -94,12 +87,12 @@ bonus: $(NAME_BONUS)
 
 $(NAME): $(OBJ)
 	rm -rf $(NAME)
-	make all -C ./1-libft
+	make all -C ./0-libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIB_FLAGS) $(MLX) -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_B)
 	rm -rf $(NAME)
-	make bonus -C ./1-libft
+	make all -C ./0-libft
 	$(CC) $(CFLAGS) $(OBJ_B) $(LIB_FLAGS) $(MLX) -o $(NAME)
 
 #####################################################################################
@@ -109,11 +102,11 @@ $(NAME_BONUS): $(OBJ_B)
 clean:
 	rm -rf $(OBJ) $(OBJ_B)
 	rm -rf ./a.out
-	make clean -C ./1-libft
+	make clean -C ./0-libft
 
 fclean: clean
 	rm -rf $(NAME) $(NAME_BONUS)
-	make fclean -C ./1-libft
+	make fclean -C ./0-libft
 
 re: fclean all
 
