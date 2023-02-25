@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:46 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:42:33 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:47:16 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	move_right(t_game *game)
 
 static void	check_right(t_game *game)
 {
-	if (game->character.x < ((game->plot.length * SPRITE_SIZE) - 64))
+	if (game->character.x < \
+	((game->plot.length * SPRITE_SIZE) - (SPRITE_SIZE * 2)))
 	{
 		if (!is_right_wall(game))
 		{
