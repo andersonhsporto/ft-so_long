@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   0_window.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 18:42:56 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 01:51:54 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	red_cross(t_game *game)
 {
-	endgame("", game, -1);
+	endgame("", game, event_ending);
 	return (0);
 }
 
@@ -38,30 +38,4 @@ int	mini_maker(t_game *game)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character_u.ptr, game->character.x, game->character.y);
 	return (0);
-}
-
-void	endgame(char *message, t_game *game, int i)
-{
-	if (i == -1)
-	{
-		printf("%s\n", message);
-		destroy_image(game);
-		exit(0);
-		return ;
-	}
-	if (i == 2)
-	{
-		printf(RED"Error\n%s\n"ENDC, message);
-		exit(1);
-	}
-	if (i == 3)
-	{
-		printf(RED"Error\n%s\n"ENDC, message);
-		free(game->plot.temp);
-		exit(1);
-	}
-	printf(RED"Error\n%s\n"ENDC, message);
-	destroy_image(game);
-	exit(1);
-	return ;
 }

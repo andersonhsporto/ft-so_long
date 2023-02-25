@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3-map_utils.c                                      :+:      :+:    :+:   */
+/*   3_map_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:20:26 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 21:59:16 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 01:56:10 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	line_validation(char **map, t_game *game)
 		if (point.x != point.y)
 		{
 			free_map(game);
-			endgame("Invalid file: lines are not the same size!", game, 2);
+			endgame("Invalid file: lines are not the same size!", game, error);
 		}
 		i++;
 	}
