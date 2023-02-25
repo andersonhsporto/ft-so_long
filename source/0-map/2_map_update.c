@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:09:31 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:11:50 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void			read_map(t_game *game, int fd);
 static t_counter	start_counter(char *string_map, t_game *game);
-static void			count_collectibles(t_counter *cnt, char c);
+static void			count_elements(t_counter *cnt, char c);
 
 void	init_map(t_game *game, char *path)
 {
@@ -62,14 +62,14 @@ static t_counter	start_counter(char *string_map, t_game *game)
 			free(string_map);
 			endgame("Invalid, file!", game, file_error);
 		}
-		count_collectibles(&cnt, string_map[i]);
+		count_elements(&cnt, string_map[i]);
 		i++;
 	}
 	is_collectible_number_valid(game, &cnt, string_map);
 	return (cnt);
 }
 
-static void	count_collectibles(t_counter *cnt, char c)
+static void	count_elements(t_counter *cnt, char c)
 {
 	if (c == 'C')
 		cnt->collectible++;
