@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:12:23 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:09:19 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:12:58 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ bool	is_double_line(char *string_map, int i)
 	return ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])));
 }
 
-void	is_collectible_number_valid(t_game *game, t_counter *cnt, char *temp)
+void	is_elements_number_valid(t_game *game, t_counter *cnt, char *temp)
 {
 	if (\
 	!(cnt->collectible > 0 && cnt->exit == 1 && \

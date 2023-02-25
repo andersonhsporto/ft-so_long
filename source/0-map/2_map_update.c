@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:11:50 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:12:46 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static t_counter	start_counter(char *string_map, t_game *game)
 		count_elements(&cnt, string_map[i]);
 		i++;
 	}
-	is_collectible_number_valid(game, &cnt, string_map);
+	is_elements_number_valid(game, &cnt, string_map);
 	return (cnt);
 }
 
