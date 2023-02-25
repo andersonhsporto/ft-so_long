@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:24:14 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:27:08 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 
 	if (argc == 2 && (is_ber_file(argv[1])))
 		init_game(&game, argv[1]);
-	else if ((argc == 2 && !(is_ber_file(argv[1]))))
+	else if (argc == 2 && !(is_ber_file(argv[1])))
 		endgame("Can't open file. The format is not supported!", &game, error);
 	else if (argc > 2)
 		endgame("Can't open multiple files!", &game, error);
