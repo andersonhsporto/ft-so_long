@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:23:05 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 01:58:20 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:50:37 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ void	free_map(t_game	*game)
 
 void	endgame(char *message, t_game *game, enum e_state i)
 {
-	if (i == -1)
+	if (i == event_ending || i == game_over)
 	{
 		printf("%s\n", message);
 		destroy_image(game);
 		exit(0);
 		return ;
 	}
-	if (i == 2)
+	else if (i == error)
 	{
 		printf(RED"Error\n%s\n"ENDC, message);
 		exit(1);
 	}
-	if (i == 3)
+	else if (i == file_error)
 	{
 		printf(RED"Error\n%s\n"ENDC, message);
 		free(game->plot.temp);
