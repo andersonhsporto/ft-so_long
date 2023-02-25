@@ -15,7 +15,7 @@ CFLAGS	=	-Wall -Wextra -Werror -lX11
 
 MLX		=   -lmlx -lXext -lX11
 
-LIB_FLAGS =	-L ./libft -lft
+LIB_FLAGS =	-L ./1-libft -lft
 
 #####################################################################################
 #####################################################################################
@@ -25,7 +25,7 @@ INCLUDE = -I ./includes
 
 SOURCE =./source/
 MOVE =	mov/
-GNL = 	gnl/
+GNL = 	0-gnl/
 
 SOURCE_B =./source_bonus/
 MOVE_B =	mov/
@@ -94,12 +94,12 @@ bonus: $(NAME_BONUS)
 
 $(NAME): $(OBJ)
 	rm -rf $(NAME)
-	make all -C ./libft
+	make all -C ./1-libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIB_FLAGS) $(MLX) -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_B)
 	rm -rf $(NAME)
-	make bonus -C ./libft
+	make bonus -C ./1-libft
 	$(CC) $(CFLAGS) $(OBJ_B) $(LIB_FLAGS) $(MLX) -o $(NAME)
 
 #####################################################################################
@@ -109,11 +109,11 @@ $(NAME_BONUS): $(OBJ_B)
 clean:
 	rm -rf $(OBJ) $(OBJ_B)
 	rm -rf ./a.out
-	make clean -C ./libft
+	make clean -C ./1-libft
 
 fclean: clean
 	rm -rf $(NAME) $(NAME_BONUS)
-	make fclean -C ./libft
+	make fclean -C ./1-libft
 
 re: fclean all
 

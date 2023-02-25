@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:12:53 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:41:34 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "so_utils.h"
 
-# include "../libft/libft.h"
-# include "../gnl/get_next_line_bonus.h"
+# include "../0-gnl/get_next_line_bonus.h"
+# include "../1-libft/libft.h"
 # include "mlx.h"
 
 # include <fcntl.h>//open, O_RDONLY
