@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:42:13 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:09:45 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ bool		is_larger_than_window(t_game *game);
 bool		is_surrounded_by_trees(t_game *game, int y, int x);
 bool		is_rectangular(t_game *game);
 bool		is_valid_character(t_game *game, int y, int x);
+bool		is_double_line(char *string_map, int i);
+void		is_collectible_number_valid( \
+t_game *game, t_counter *cnt, char *temp);
 
 int			open_file(char *path);
 t_counter	new_counter(void);

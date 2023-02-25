@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:07:11 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:04:33 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ typedef struct s_draw
 	int		height;
 	int		length;
 	char	*line;
-	char	*temp;
 }	t_draw;
 
 typedef struct s_game

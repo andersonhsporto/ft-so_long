@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:23:05 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:50:37 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:03:29 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	endgame(char *message, t_game *game, enum e_state i)
 	else if (i == file_error)
 	{
 		printf(RED"Error\n%s\n"ENDC, message);
-		free(game->plot.temp);
 		exit(1);
 	}
 	printf(RED"Error\n%s\n"ENDC, message);
