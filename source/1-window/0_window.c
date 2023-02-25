@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:42:24 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:19:58 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,17 @@ int	mini_maker(t_game *game)
 {
 	render_map(game);
 	if (game->i.movements == 0)
-	{
 		player_init(game);
-	}
-	if (game->character.mem == down)
+	else if (game->character.mem == down)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character.ptr, game->character.x, game->character.y);
-	if (game->character.mem == left)
+	else if (game->character.mem == left)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character_l.ptr, game->character.x, game->character.y);
-	if (game->character.mem == right)
+	else if (game->character.mem == right)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character_r.ptr, game->character.x, game->character.y);
-	if (game->character.mem == up)
+	else if (game->character.mem == up)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character_u.ptr, game->character.x, game->character.y);
 	return (0);
