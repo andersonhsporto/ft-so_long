@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:14 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:01:23 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:42:36 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	move_up(t_game *game)
 
 static void	check_up(t_game *game)
 {
-	if ((game->character.y > 32))
+	if ((game->character.y > SPRITE_SIZE))
 	{
 		if (!is_up_wall(game))
 		{
-			game->character.y -= 32;
-			map_maker(game);
+			game->character.y -= SPRITE_SIZE;
+			render_map(game);
 			print_moves(game);
 		}
 	}
@@ -42,7 +42,7 @@ static bool	is_up_wall(t_game *game)
 {
 	return (! \
 	(game->plot.map \
-	[((game->character.y - 32) / 32)] \
-	[(game->character.x / 32)] != '1') \
+	[((game->character.y - SPRITE_SIZE) / SPRITE_SIZE)] \
+	[(game->character.x / SPRITE_SIZE)] != '1') \
 	);
 }

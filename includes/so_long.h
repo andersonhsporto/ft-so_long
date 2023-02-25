@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:05:39 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:42:13 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <stdio.h>//printf
 # include <stdbool.h>//bool
 
-void		map_maker(t_game	*game);
+void		render_map(t_game	*game);
 void		init_map(t_game *game, char *path);
 
 int			key_check(int keycode, t_game *game);
@@ -39,7 +39,7 @@ void		move_down(t_game *parameter);
 void		player_init(t_game	*game);
 int			len_map_validation(char **map, t_game *game);
 
-void		init_so_long(t_game *game);
+void		init_window(t_game *game);
 void		init_images(t_game	*game);
 t_img		new_sprite(void *mlx, char *path);
 void		destroy_image(t_game *game);

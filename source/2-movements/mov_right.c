@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:56:46 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:01:13 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:42:33 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	move_right(t_game *game)
 
 static void	check_right(t_game *game)
 {
-	if (game->character.x < ((game->plot.length * 32) - 64))
+	if (game->character.x < ((game->plot.length * SPRITE_SIZE) - 64))
 	{
 		if (!is_right_wall(game))
 		{
-			game->character.x += 32;
-			map_maker(game);
+			game->character.x += SPRITE_SIZE;
+			render_map(game);
 			print_moves(game);
 		}
 	}
@@ -42,7 +42,7 @@ static bool	is_right_wall(t_game *game)
 {
 	return (! \
 	(game->plot.map \
-	[(game->character.y / 32)] \
-	[((game->character.x + 32) / 32)] != '1') \
+	[(game->character.y / SPRITE_SIZE)] \
+	[((game->character.x + SPRITE_SIZE) / SPRITE_SIZE)] != '1') \
 	);
 }

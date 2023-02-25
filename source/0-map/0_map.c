@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:29:12 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 01:55:23 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:42:19 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	map_check_one(t_game *game, int y, int x)
 	return ;
 }
 
-void	map_maker(t_game *game)
+void	render_map(t_game *game)
 {
 	t_point	coord;
 

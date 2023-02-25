@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 01:55:59 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:36:46 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	player_init(t_game	*game)
 		{
 			if (game->plot.map[point.y][point.x] == 'P')
 			{
-				game->character.x = (32 * point.x);
-				game->character.y = (32 * point.y);
+				game->character.x = (SPRITE_SIZE * point.x);
+				game->character.y = (SPRITE_SIZE * point.y);
 				render_player(game);
 				return ;
 			}

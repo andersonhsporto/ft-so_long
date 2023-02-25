@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:55:37 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:01:04 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:42:27 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	check_down(t_game *game)
 		if (!is_down_wall(game))
 		{
 			game->character.y += SPRITE_SIZE;
-			map_maker(game);
+			render_map(game);
 			print_moves(game);
 		}
 	}
@@ -43,7 +43,7 @@ static bool	is_down_wall(t_game *game)
 {
 	return (! \
 	(game->plot.map \
-	[((game->character.y + 32) / 32)] \
-	[(game->character.x / 32)] != '1') \
+	[((game->character.y + SPRITE_SIZE) / SPRITE_SIZE)] \
+	[(game->character.x / SPRITE_SIZE)] != '1') \
 	);
 }

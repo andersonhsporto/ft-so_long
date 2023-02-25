@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 01:51:54 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:42:24 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	red_cross(t_game *game)
 
 int	mini_maker(t_game *game)
 {
-	map_maker(game);
+	render_map(game);
 	if (game->i.movements == 0)
 	{
 		player_init(game);

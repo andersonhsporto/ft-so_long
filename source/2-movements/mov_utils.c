@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:57:50 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 01:57:03 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:38:12 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ int	key_check(int keycode, t_game *game)
 void	print_moves(t_game *game)
 {
 	game->i.movements += 1;
-	if (game->plot.map[game->character.y / 32][game->character.x / 32] == 'C')
+	if (game->plot.map[game->character.y / SPRITE_SIZE] \
+	[game->character.x / SPRITE_SIZE] == 'C')
 	{
-		game->plot.map[game->character.y / 32][game->character.x / 32] = '0';
+		game->plot.map[game->character.y / SPRITE_SIZE] \
+		[game->character.x / SPRITE_SIZE] = '0';
 		game->i.collectible--;
 	}
-	if (game->plot.map[game->character.y / 32]
-		[game->character.x / 32] == 'E' && game->i.collectible == 0)
+	if (game->plot.map[game->character.y / SPRITE_SIZE]
+		[game->character.x / SPRITE_SIZE] == 'E' && game->i.collectible == 0)
 	{
 		endgame(GREEN"\n\nThe End! :)"ENDC, game, game_over);
 	}

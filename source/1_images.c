@@ -6,14 +6,14 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 01:54:37 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:41:46 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../includes/path.h"
 
-void	init_so_long(t_game *game)
+void	init_window(t_game *game)
 {
 	game->mlx_pointer = mlx_init();
 	if (is_larger_than_window(game))
@@ -25,9 +25,11 @@ void	init_so_long(t_game *game)
 	}
 	else
 	{
-		game->window_pointer = mlx_new_window(game->mlx_pointer,
-				(game->plot.length * 32), (game->plot.height * 32),
-				WINDOW_NAME);
+		game->window_pointer = mlx_new_window(\
+		game->mlx_pointer, \
+		(game->plot.length * SPRITE_SIZE), \
+		(game->plot.height * SPRITE_SIZE), \
+		WINDOW_NAME);
 	}
 }
 
