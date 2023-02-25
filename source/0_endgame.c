@@ -1,63 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   images.c                                           :+:      :+:    :+:   */
+/*   0_endgame.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 19:31:29 by anhigo-s         ###   ########.fr       */
+/*   Created: 2023/02/25 01:23:05 by anhigo-s          #+#    #+#             */
+/*   Updated: 2023/02/25 01:58:20 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-void	init_so_long(t_game *game)
-{
-	game->mlx_pointer = mlx_init();
-	if (is_larger_than_window(game))
-	{
-		free_map(game);
-		mlx_destroy_display(game->mlx_pointer);
-		free(game->mlx_pointer);
-		endgame("Map size larger than display resolution", game, 2);
-	}
-	else
-	{
-		game->window_pointer = mlx_new_window(game->mlx_pointer,
-				(game->plot.length * 32), (game->plot.height * 32),
-				WINDOW_NAME);
-	}
-}
-
-void	init_images(t_game	*game)
-{
-	game->wall = new_sprite(game->mlx_pointer,
-			"./img/tree.xpm");
-	game->floor = new_sprite(game->mlx_pointer,
-			"./img/floor.xpm");
-	game->collect = new_sprite(game->mlx_pointer,
-			"./img/potion.xpm");
-	game->portal = new_sprite(game->mlx_pointer,
-			"./img/portal.xpm");
-	game->character = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/down_1__.xpm");
-	game->character_l = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/left_1__.xpm");
-	game->character_r = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/right_1__.xpm");
-	game->character_u = new_sprite(game->mlx_pointer,
-			"./img/link_sprites/up_1__.xpm");
-	return ;
-}
-
-t_img	new_sprite(void *mlx, char *path)
-{
-	t_img	img;
-
-	img.ptr = mlx_xpm_file_to_image(mlx, path, &img.x, &img.y);
-	return (img);
-}
 
 void	destroy_image(t_game *game)
 {
@@ -84,5 +37,31 @@ void	free_map(t_game	*game)
 		game->plot.height--;
 	}
 	free(game->plot.map);
+	return ;
+}
+
+void	endgame(char *message, t_game *game, enum e_state i)
+{
+	if (i == -1)
+	{
+		printf("%s\n", message);
+		destroy_image(game);
+		exit(0);
+		return ;
+	}
+	if (i == 2)
+	{
+		printf(RED"Error\n%s\n"ENDC, message);
+		exit(1);
+	}
+	if (i == 3)
+	{
+		printf(RED"Error\n%s\n"ENDC, message);
+		free(game->plot.temp);
+		exit(1);
+	}
+	printf(RED"Error\n%s\n"ENDC, message);
+	destroy_image(game);
+	exit(1);
 	return ;
 }

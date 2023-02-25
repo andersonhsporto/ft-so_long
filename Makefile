@@ -38,14 +38,23 @@ GNSRC = 	$(addprefix $(GNL), \
 		get_next_line_bonus.c get_next_line_utils_bonus.c \
 )
 
-MSRC =		$(addprefix $(MOVE), \
+MAP =		$(addprefix 0-map/, \
+		0_map.c 1_map_validation.c 2_map_update.c 3_map_utils.c \
+)
+
+WINDOW =	$(addprefix 1-window/, \
+		0_window.c 1_screen_validations.c \
+)
+
+MSRC =		$(addprefix 2-movements/, \
 		mov_left.c mov_right.c mov_up.c mov_down.c mov_utils.c \
 )
 
+
 A_SRC =		$(addprefix $(SOURCE), \
-		$(MSRC) \
-		so_long.c 0-window.c images.c map.c \
-		map_update.c 1-map_validation.c 2-screen_validations.c 3-map_utils.c \
+		$(MSRC) $(MAP) $(WINDOW) \
+		0_endgame.c 1_images.c \
+		so_long.c \
 )
 
 MSRC_B =	$(addprefix $(MOVE_B), \
@@ -108,3 +117,7 @@ fclean: clean
 re: fclean all
 
 .PHONY: all bonus clean fclean re
+
+#####################################################################################
+#####################################################################################
+#####################################################################################

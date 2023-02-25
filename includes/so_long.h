@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/23 21:54:16 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:05:39 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ void		free_map(t_game	*game);
 
 int			red_cross(t_game *game);
 int			mini_maker(t_game *game);
-void		endgame(char *message, t_game *game, int i);
-bool		check_arg(const char *argv);
+void		endgame(char *message, t_game *game, enum e_state i);
 
 t_point		get_screen_size(t_game *game);
 bool		is_larger_than_window(t_game *game);
