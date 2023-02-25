@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:27:08 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/25 03:53:25 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static bool	is_ber_file(const char *argv)
 
 	string = ft_strrchr(argv, '.');
 	if (string)
-		return (ft_memcmp(string, ".ber", ft_strlen(string)) == 0);
+		return (ft_strcmp(string, ".ber") == 0);
 	return (false);
 }
 
