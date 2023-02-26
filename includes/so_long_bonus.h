@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:49:15 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/26 00:18:38 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 # include <unistd.h>//read, close, write
 # include <stdlib.h>//malloc
 # include <stdio.h>//printf
-
+# include <stdbool.h>//bool
 # include <time.h>//bonus delay
 
-void	map_maker(t_game	*game);
+void	render_map(t_game	*game);
 void	init_map(t_game *game, char *path);
 
 int		key_check(int keycode, t_game *game);

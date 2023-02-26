@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window_bonus.c                                     :+:      :+:    :+:   */
+/*   0_window_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 22:52:19 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/26 00:22:23 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	red_cross(t_game *game)
 
 int	mini_maker(t_game *game)
 {
-	map_maker(game);
+	render_map(game);
 	if (game->i.movements == 0)
 	{
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
@@ -39,48 +39,6 @@ int	mini_maker(t_game *game)
 	if (game->character.mem == up)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 			game->character_u.ptr, game->character.x, game->character.y);
-	return (0);
-}
-
-void	endgame(char *message, t_game *game, int i)
-{
-	if (i == -1)
-	{
-		printf("%s\n", message);
-		destroy_image(game);
-		exit(0);
-		return ;
-	}
-	if (i == 2)
-	{
-		printf(RED"Error\n%s\n"ENDC, message);
-		exit(1);
-	}
-	if (i == 3)
-	{
-		printf(RED"Error\n%s\n"ENDC, message);
-		free(game->plot.temp);
-		exit(1);
-	}
-	printf(RED"Error\n%s\n"ENDC, message);
-	destroy_image(game);
-	exit(1);
-	return ;
-}
-
-int	check_arg(const char *argv)
-{
-	size_t	len;
-	char	*string;
-
-	len = 0;
-	string = ft_strrchr(argv, '.');
-	if (string)
-	{
-		len = ft_strlen(string);
-		if (ft_memcmp(string, ".ber", len) == 0)
-			return (1);
-	}
 	return (0);
 }
 
@@ -104,6 +62,6 @@ void	init_so_long(t_game *game)
 	{
 		game->window_pointer = mlx_new_window(game->mlx_pointer,
 				(game->plot.length * 32), ((game->plot.height * 32) + 16),
-				"./so_long");
+				WINDOW_NAME);
 	}
 }
