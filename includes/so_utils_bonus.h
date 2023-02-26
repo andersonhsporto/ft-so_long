@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/30 02:19:58 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/02/26 00:17:20 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,34 @@
 # define GREEN	"\033[1m\033[32m"
 # define ENDC	"\033[0m"
 
+# define WINDOW_NAME	"./so_long_bonus"
+# define SPRITE_SIZE	32
+
+# define KEY_PRESS	2
+# define KEY_RELEASE	3
+# define DESTROY_NOTIFY	17
+# define EXPOSE		12
+
+# define KEY_PRESS_MASK		1
+# define KEY_RELEASE_MASK	2
+# define NO_EVENT_MASK		0
+# define EXPOSURE_MASK		32768
+
 enum e_direction
 {
 	down,
 	left,
 	right,
 	up,
+};
+
+enum e_state
+{
+	event_ending = -1,
+	game_over = -1,
+	error = 2,
+	file_error = 3,
+	map_char_error = 4,
 };
 
 typedef struct s_counter
@@ -106,5 +128,11 @@ typedef struct s_game
 	t_frames	collect_a;
 	t_emydata	public;
 }	t_game;
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}	t_point;
 
 #endif
