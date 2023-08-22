@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:53:25 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/08/22 17:45:39 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ int	main(int argc, char *argv[])
 {
 	t_game	game;
 
-	if (argc == 2 && (is_ber_file(argv[1])))
-		init_game(&game, argv[1]);
-	else if (argc == 2 && !(is_ber_file(argv[1])))
+	if (argc == 2 && (is_ber_file(argv[1]))) //checking if input is correct (map extension and amount of input strings)
+		init_game(&game, argv[1]); //if the if statement is true - enter init_game function
+	else if (argc == 2 && !(is_ber_file(argv[1]))) // if file extension is wrong enter endgame function and do not launch the game
 		endgame("Can't open file. The format is not supported!", &game, error);
-	else if (argc > 2)
+	else if (argc > 2) // if amount of arguments is wrong enter endgame function and do not launch the game
 		endgame("Can't open multiple files!", &game, error);
-	else
+	else // if amount of arguments is wrong enter endgame function and do not launch the game
 		endgame("Please specify file name!", &game, error);
 	return (0);
 }
 
 static void	init_game(t_game *game, char *path)
-{
+{ //the whole function prepares all the wariables and initialises everything (mlx library) for game to launch
 	init_map(game, path);
 	init_window(game);
 	init_images(game);
