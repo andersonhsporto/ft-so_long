@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:23:05 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:03:29 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:14:42 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	endgame(char *message, t_game *game, enum e_state i)
 		printf("%s\n", message);
 		destroy_image(game);
 		exit(0);
-		return ;
 	}
 	else if (i == error)
 	{
