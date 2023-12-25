@@ -1,6 +1,5 @@
 # so_long
 
-
 Para acessar a versão em português deste README [clique aqui](https://github.com/andersonhsporto/ft-so_long/blob/main/README-pt-br.md).
 
 Щоб прочитати цей файл українською, перейдіть за посиланням [here](https://github.com/andersonhsporto/ft-so_long/blob/main/README-uk.md).
@@ -15,6 +14,10 @@ Para acessar a versão em português deste README [clique aqui](https://github.c
 Project of the 42 school common core curriculum. The goal is to create a proof of concept of a 2D game using the [MinilibX](https://github.com/42Paris/minilibx-linux) graphic library and the ANSI C language.
 
 This project is a simple game where the player must collect all the items on the map and reach the exit, the player can only move horizontally and vertically, the map is composed of walls, empty spaces, collectible items and the exit, the player loses if he collides with an enemy.
+
+This project is build for educational purposes and you are free to use it as you wish.
+
+If you are a 42 student, feel free to use this project as a reference, but remember: ** you need to understand the code to use it ** and maybe this is not compliant with that last subject you are working on, so be careful.
 
 ### MLX
 
@@ -90,3 +93,13 @@ Example:
 
 If you have any questions, suggestions, or critiques, please contact me using [email](mailto:anderson.higo2@gmail.com)
 or through [LinkedIn](https://www.linkedin.com/in/andersonhsporto/). feedbacks are always welcome =D
+
+## Contributors
+
+If you want to contribute and improve this project, you can fork this repository and submit a pull request with your changes, I will be happy to review and accept your changes
+
+## Appreciation
+
+I would like to thank the following people for their contributions to this project:
+
+* [Yurii Arutiunov](https://github.com/yarutiun) for the translation to Ukrainian.

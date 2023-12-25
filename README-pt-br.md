@@ -88,3 +88,6 @@ Exemplo:
 Se você tiver alguma dúvida, sugestão ou crítica, entre em contato comigo através do [e-mail](mailto:anderson.higo2@gmail.com) ou pelo [LinkedIn](https://www.linkedin.com/in/andersonhsporto/). Feedbacks são sempre bem-vindos =D
 
 
+## Contribuição
+
+Se você quiser contribuir com este projeto, clone este repositório e envie uma pull request com suas modificações e eu ficarei feliz em analisar e aceitar :D toda sugestão é bem-vinda!
