@@ -33,8 +33,8 @@ SOURCE_B	=	./source_bonus/
 ################################################################################
 
 MAP =		$(addprefix 0-map/, \
-		0_map.c 2_map_update.c 3_map_utils.c \
-		4_map_render_player.c \
+		0_map.c 1_map_update.c 2_map_utils.c \
+		3_map_render_player.c \
 )
 
 WINDOW =	$(addprefix 1-window/, \
@@ -45,7 +45,7 @@ MOVE =		$(addprefix 2-movements/, \
 		mov_left.c mov_right.c mov_up.c mov_down.c mov_utils.c \
 )
 
-VALIDATION =	$(addprefix 3-file-check/, \
+VALIDATION =	$(addprefix 3-validation/, \
 		0_file_reader.c 1_map_validation.c \
 )
 
