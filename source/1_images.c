@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 02:41:46 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:56:09 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	init_images(t_game	*game)
 	game->character_l = new_sprite(game->mlx_pointer, CHAR_L_PATH);
 	game->character_r = new_sprite(game->mlx_pointer, CHAR_R_PATH);
 	game->character_u = new_sprite(game->mlx_pointer, CHAR_U_PATH);
+	game->state = image_init;
 	return ;
 }
 

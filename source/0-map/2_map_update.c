@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:12:46 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 17:26:32 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@ void	init_map(t_game *game, char *path)
 
 	fd = open_file(path);
 	read_map(game, fd);
-	game->plot.length = len_map_validation(game->plot.map, game);
 	close(fd);
+	game->plot.length = len_map_validation(game->plot.map);
+	if (game->plot.length == 0) {
+		free_map(game);
+		endgame("Invalid file: lines are not the same size!", game, error);
+	}
+	validate_map(game);
 	return ;
 }
 

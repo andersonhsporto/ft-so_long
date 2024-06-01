@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:36 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/26 00:01:34 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:55:12 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ enum e_state
 	error = 2,
 	file_error = 3,
 	map_char_error = 4,
+	image_init = 5,
 };
 
 typedef struct s_counter
@@ -91,6 +92,7 @@ typedef struct s_game
 	t_img		wall;
 	t_img		collect;
 	t_img		portal;
+	int			state;
 }	t_game;
 
 typedef struct s_point

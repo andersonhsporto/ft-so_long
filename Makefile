@@ -12,7 +12,7 @@ NAME_BONUS	=	so_long_bonus
 
 CC			=	cc
 
-CFLAGS		=	-Wall -Wextra -Werror -lX11
+CFLAGS		=	-Wall -Wextra -Werror -lX11 -g
 
 MLX			=   -lmlx -lXext -lX11
 
@@ -33,7 +33,7 @@ SOURCE_B	=	./source_bonus/
 ################################################################################
 
 MAP =		$(addprefix 0-map/, \
-		0_map.c 1_map_validation.c 2_map_update.c 3_map_utils.c \
+		0_map.c 2_map_update.c 3_map_utils.c \
 		4_map_render_player.c \
 )
 
@@ -45,8 +45,12 @@ MOVE =		$(addprefix 2-movements/, \
 		mov_left.c mov_right.c mov_up.c mov_down.c mov_utils.c \
 )
 
+VALIDATION =	$(addprefix 3-file-check/, \
+		0_file_reader.c 1_map_validation.c \
+)
+
 A_SRC =		$(addprefix $(SOURCE), \
-		$(MOVE) $(MAP) $(WINDOW) \
+		$(MOVE) $(MAP) $(WINDOW) $(VALIDATION) \
 		0_endgame.c 1_images.c \
 		so_long.c \
 )

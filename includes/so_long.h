@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:49:03 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 17:25:27 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void		move_up(t_game *parameter);
 void		move_down(t_game *parameter);
 
 void		player_init(t_game	*game);
-int			len_map_validation(char **map, t_game *game);
+int			len_map_validation(char **map);
 
 void		init_window(t_game *game);
 void		init_images(t_game	*game);
@@ -60,4 +60,9 @@ t_game *game, t_counter *cnt, char *temp);
 
 int			open_file(char *path);
 t_counter	new_counter(void);
+
+void		validate_map(t_game *game);
+
+void		print_exit_err_message(char *message);
+
 #endif
