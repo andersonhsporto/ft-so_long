@@ -6,13 +6,14 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:24:52 by anhigo-s          #+#    #+#             */
-/*   Updated: 2024/06/01 17:28:19 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 19:17:27 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static bool	line_validation(char **map);
+static void	basic_validation(t_game *game);
+static bool	all_line_is_same_size(char **map);
 static void	char_validation(t_game *game, int y, int x);
 
 void	validate_map(t_game *game)
@@ -21,8 +22,7 @@ void	validate_map(t_game *game)
 	int	x;
 
 	y = 0;
-	if (!is_rectangular(game))
-		endgame("Map is not rectangular!", game, map_char_error);
+	basic_validation(game);
 	while (game->plot.map[y])
 	{
 		x = 0;
@@ -36,12 +36,21 @@ void	validate_map(t_game *game)
 	return ;
 }
 
-int	len_map_validation(char **map)
+static void	basic_validation(t_game *game)
 {
-	if (line_validation(map)) {
-		return (ft_strlen(map[0]));
+	if (is_elements_number_valid(&game->i))
+	{
+		free_map(game);
+		endgame("Invalid file: wrong number of elements", game, error);
 	}
-	return (0);
+	if (all_line_is_same_size(game->plot.map) == false) {
+		free_map(game);
+		endgame("Invalid file: lines are not the same size!", game, error);
+	}
+	if (is_rectangular(game) == false) {
+		endgame("Map is not rectangular!", game, map_char_error);
+	}
+	return ;
 }
 
 static void	char_validation(t_game *game, int y, int x)
@@ -53,21 +62,16 @@ static void	char_validation(t_game *game, int y, int x)
 	return ;
 }
 
-static bool	line_validation(char **map)
+static bool	all_line_is_same_size(char **map)
 {
-	int		i;
-	t_point	point;
+	const size_t	line = ft_strlen(map[0]);
+	int				i;
 
 	i = 0;
-	point.x = 0;
-	point.y = ft_strlen(map[0]);
 	while (map[i] != 0)
 	{
-		point.x = ft_strlen(map[i]);
-		if (point.x != point.y)
-		{
+		if (line != ft_strlen(map[i]))
 			return (false);
-		}
 		i++;
 	}
 	return (true);

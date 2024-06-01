@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:53 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/09/05 22:13:25 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 19:10:05 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char *argv[])
 static void	init_game(t_game *game, char *path)
 { //the whole function prepares all the wariables and initialises everything (mlx library) for game to launch
 	init_map(game, path);
+	validate_map(game);
 	init_window(game);
 	init_images(game);
 	render_map(game);

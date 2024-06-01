@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:20:26 by anhigo-s          #+#    #+#             */
-/*   Updated: 2024/06/01 16:28:08 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 19:17:04 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 int	open_file(char *path)
 {
-	int	fd;
+	const int	fd = open(path, O_RDONLY);
 
-	fd = open(path, O_RDONLY);
 	if (fd < 0)
-	{
-		printf("Error\nInvalid file\n");
-		exit(1);
-	}
+		print_exit_err_message("Invalid file");
 	return (fd);
 }
 
@@ -35,4 +31,16 @@ t_counter	new_counter(void)
 	counter.movements = 0;
 	counter.empty = 0;
 	return (counter);
+}
+
+int str_array_len(char **array)
+{
+	int i;
+
+	i = 0;
+	while (array[i]) {
+		printf("%s\n", array[i]);
+		i++;
+	}
+	return (i);
 }

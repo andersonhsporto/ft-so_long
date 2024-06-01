@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 19:12:23 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/25 03:12:58 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 18:48:24 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,29 @@ bool	is_valid_character(t_game *game, int y, int x)
 	return (true);
 }
 
-bool	is_double_line(char *string_map, int i)
+bool	is_double_line(const char *string_map)
 {
-	return ((string_map[i] == '\n') && (ft_strchr("\n\0", string_map[i + 1])));
+	size_t	i;
+
+	i = 0;
+	while (string_map[i])
+	{
+		if (string_map[i] == '\n' && string_map[i + 1] == '\n')
+		{
+			return (true);
+		}
+		i++;
+	}
+	return (false);
 }
 
-void	is_elements_number_valid(t_game *game, t_counter *cnt, char *temp)
+bool	is_elements_number_valid(t_counter *cnt)
 {
 	if (\
 	!(cnt->collectible > 0 && cnt->exit == 1 && \
 	cnt->start == 1 && cnt->empty > 0))
 	{
-		free(temp);
-		endgame("Invalid, file!", game, file_error);
+		return (true);
 	}
+	return (false);
 }
