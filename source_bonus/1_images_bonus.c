@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   images_bonus.c                                     :+:      :+:    :+:   */
+/*   1_images_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:09:24 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 20:26:08 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:07:53 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,4 @@ t_img	new_sprite(void *mlx, char *path)
 	img.mem = 0;
 	img.ptr = mlx_xpm_file_to_image(mlx, path, &img.x, &img.y);
 	return (img);
-}
-
-void	free_map(t_game	*game)
-{
-	int	i;
-
-	i = 0;
-	while (game->plot.map[i] != 0)
-	{
-		free(game->plot.map[i]);
-		game->plot.map[i] = NULL;
-		i++;
-	}
-	free(game->plot.map);
-	return ;
 }

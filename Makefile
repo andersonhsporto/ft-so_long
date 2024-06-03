@@ -59,13 +59,14 @@ A_SRC =		$(addprefix $(SOURCE), \
 ############################## BONUS FILES #####################################
 ################################################################################
 
-ANIMATION_B	= 	$(addprefix 3-animation/, \
+ANIMATION_B	= 	$(addprefix 4-animation/, \
 		animation_bonus.c destroy_bonus.c enemy_bonus.c \
 )
 
 MAP_B		= 	$(addprefix 0-map/, \
-		map_bonus.c map_update_bonus.c \
+		0-map_bonus.c 1_map_update_bonus.c 2_map_utils_bonus.c map_update_bonus.c 3_map_render_player.c \
 )
+
 
 WINDOW_B	=	$(addprefix 1-window/, \
 		0_window_bonus.c 1_screen_validations.c \
@@ -76,11 +77,16 @@ MOVE_B		=	$(addprefix 2-movements/, \
 		mov_utils_bonus.c \
 )
 
+VALIDATION_B =	$(addprefix 3-validation/, \
+		0_file_reader_bonus.c 1_map_validation_bonus.c \
+)
+
 A_SRC_B		=	$(addprefix $(SOURCE_B), \
-		$(ANIMATION_B) $(MOVE_B) $(MAP_B) $(WINDOW_B) \
+		$(ANIMATION_B) $(MOVE_B) $(MAP_B) $(WINDOW_B) $(VALIDATION_B) \
 		0_endgame_bonus.c 1_images_bonus.c 2_images_init_bonus.c \
 		so_long_bonus.c \
 )
+
 
 ################################################################################
 ################################################################################
