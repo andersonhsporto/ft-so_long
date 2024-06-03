@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 23:07:54 by anhigo-s          #+#    #+#             */
-/*   Updated: 2021/10/28 20:26:01 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 22:28:10 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,5 @@ void	destroy_image(t_game *game)
 	destroy_player_lu(game);
 	mlx_destroy_window(game->mlx_pointer, game->window_pointer);
 	mlx_destroy_display(game->mlx_pointer);
-	free_map(game);
-	free(game->mlx_pointer);
 	return ;
 }

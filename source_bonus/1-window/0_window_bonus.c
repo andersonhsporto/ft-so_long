@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 23:22:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/26 00:22:23 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 20:18:19 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,27 @@ int	red_cross(t_game *game)
 {
 	endgame("", game, -1);
 	return (0);
+}
+
+
+void	init_window(t_game *game)
+{
+	game->mlx_pointer = mlx_init();
+	if (is_larger_than_window(game))
+	{
+		free_map(game);
+		mlx_destroy_display(game->mlx_pointer);
+		free(game->mlx_pointer);
+		endgame("Map size larger than display resolution", game, error);
+	}
+	else
+	{
+		game->window_pointer = mlx_new_window(\
+		game->mlx_pointer, \
+		(game->plot.length * SPRITE_SIZE), \
+		((game->plot.height * SPRITE_SIZE) + 16), \
+		WINDOW_NAME);
+	}
 }
 
 int	mini_maker(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2023/02/26 00:18:38 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 22:26:47 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,53 +25,66 @@
 # include <stdbool.h>//bool
 # include <time.h>//bonus delay
 
-void	render_map(t_game	*game);
-void	init_map(t_game *game, char *path);
+void		render_map(t_game	*game);
+void		init_map(t_game *game, char *path);
 
-int		key_check(int keycode, t_game *game);
-void	print_moves(t_game *game);
+int			key_check(int keycode, t_game *game);
+void		print_moves(t_game *game);
 
-void	move_right(t_game *parameter);
-void	move_left(t_game *parameter);
-void	move_up(t_game *parameter);
-void	move_down(t_game *parameter);
+void		move_right(t_game *parameter);
+void		move_left(t_game *parameter);
+void		move_up(t_game *parameter);
+void		move_down(t_game *parameter);
 
-void	player_init(t_game	*game);
-int		len_map_validation(char **map, t_game *game);
+void		player_init(t_game	*game);
+int			len_map_validation(char **map);
 
-void	init_so_long(t_game *game);
-void	init_images(t_game	*game);
-t_img	new_sprite(void *mlx, char *path);
-void	destroy_image(t_game *game);
-void	free_map(t_game	*game);
+void		init_window(t_game *game);
+void		init_images(t_game	*game);
+t_img		new_sprite(void *mlx, char *path);
+void		destroy_image(t_game *game);
+void		free_map(t_game	*game);
 
-int		red_cross(t_game *game);
-int		mini_maker(t_game *game);
-void	endgame(char *message, t_game *game, int i);
-int		check_arg(const char *argv);
+int			red_cross(t_game *game);
+int			mini_maker(t_game *game);
+void		endgame(char *message, t_game *game, enum e_state i);
 
-int		fix_image(t_game *game);
+t_point		get_screen_size(t_game *game);
+bool		is_larger_than_window(t_game *game);
 
-void	init_sprites(t_game	*game);
-int		fix_pos(int keycode, t_game *game);
-void	put_image(t_game *game, void *frame);
+bool		is_surrounded_by_trees(t_game *game, int y, int x);
+bool		is_rectangular(t_game *game);
+bool		is_valid_character(t_game *game, int y, int x);
+bool		is_double_line(const char *string_map);
+bool		is_elements_number_valid(t_counter *cnt);
 
-void	print_map_string(t_game *game);
-void	print_potion(t_game *game, int y, int x);
+int			open_file(char *path);
+t_counter	new_counter(void);
 
-void	print_e(t_game *game, int y, int x);
-void	init_enemies(t_game *game, int i, int j);
-void	destroy_enemies(t_game *game);
+void		validate_map(t_game *game);
 
-void	init_collec(t_game *game, int i, int j);
+void		print_exit_err_message(char *message);
 
-void	delay(int milliseconds);
+int			str_array_len(char **array);
 
-void	init_link_down(t_game *game, int i, int j);
-void	init_link_right(t_game *game, int i, int j);
-void	init_link_left(t_game *game, int i, int j);
-void	init_link_up(t_game *game, int i, int j);
-void	init_collec(t_game *game, int i, int j);
+int			fix_image(t_game *game);
+int			fix_pos(int keycode, t_game *game);
 
-void	print_portal(t_game *game);
+void		init_link_down(t_game *game, int i, int j);
+void		init_link_right(t_game *game, int i, int j);
+void		init_link_left(t_game *game, int i, int j);
+void		init_link_up(t_game *game, int i, int j);
+void		init_collec(t_game *game, int i, int j);
+void		init_enemies(t_game *game, int i, int j);
+
+void		print_portal(t_game *game);
+
+void		destroy_image(t_game *game);
+void		destroy_enemies(t_game *game);
+void		put_image(t_game *game, void *frame);
+void		print_map_string(t_game *game);
+void		print_e(t_game *game, int y, int x);
+void		print_potion(t_game *game, int y, int x);
+void		delay(int milliseconds);
+
 #endif
