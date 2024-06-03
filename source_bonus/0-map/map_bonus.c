@@ -34,7 +34,7 @@
 // 	else if (game->plot.map[y][x] == 'C')
 // 		print_potion(game, y, x);
 // 	else if (ft_strchr("Ff", game->plot.map[y][x]))
-// 		print_e(game, y, x);
+// 		print_fire(game, y, x);
 // 	else
 // 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 // 			game->floor.ptr, (32 * x), (32 * y));

@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2024/06/02 21:28:01 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 21:51:25 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,20 @@ int			str_array_len(char **array);
 int			fix_image(t_game *game);
 int			fix_pos(int keycode, t_game *game);
 
-void	init_link_down(t_game *game, int i, int j);
-void	init_link_right(t_game *game, int i, int j);
-void	init_link_left(t_game *game, int i, int j);
-void	init_link_up(t_game *game, int i, int j);
-void	init_collec(t_game *game, int i, int j);
-void	init_enemies(t_game *game, int i, int j);
+void		init_link_down(t_game *game, int i, int j);
+void		init_link_right(t_game *game, int i, int j);
+void		init_link_left(t_game *game, int i, int j);
+void		init_link_up(t_game *game, int i, int j);
+void		init_collec(t_game *game, int i, int j);
+void		init_enemies(t_game *game, int i, int j);
 
-void	print_portal(t_game *game);
+void		print_portal(t_game *game);
 
-void	destroy_image(t_game *game);
-void	destroy_enemies(t_game *game);
-void	put_image(t_game *game, void *frame);
-void	delay(int milliseconds);
+void		destroy_image(t_game *game);
+void		destroy_enemies(t_game *game);
+void		put_image(t_game *game, void *frame);
+void		print_map_string(t_game *game);
+void		print_e(t_game *game, int y, int x);
+void		delay(int milliseconds);
 
 #endif

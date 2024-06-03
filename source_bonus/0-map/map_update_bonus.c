@@ -6,12 +6,11 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:11:33 by anhigo-s          #+#    #+#             */
-/*   Updated: 2024/06/02 21:27:37 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 21:39:15 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-#include <time.h>
 
 void	print_map_string(t_game *game)
 {
