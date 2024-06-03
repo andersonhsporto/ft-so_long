@@ -139,6 +139,8 @@ fclean: clean
 
 re: fclean all
 
+re bonus: fclean bonus
+
 .PHONY: all bonus clean fclean re
 
 ################################################################################

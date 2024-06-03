@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:19:25 by anhigo-s          #+#    #+#             */
-/*   Updated: 2024/06/02 21:51:25 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 22:26:47 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void		destroy_enemies(t_game *game);
 void		put_image(t_game *game, void *frame);
 void		print_map_string(t_game *game);
 void		print_e(t_game *game, int y, int x);
+void		print_potion(t_game *game, int y, int x);
 void		delay(int milliseconds);
 
 #endif

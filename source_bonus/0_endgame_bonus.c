@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 00:20:52 by anhigo-s          #+#    #+#             */
-/*   Updated: 2024/06/01 20:03:02 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 22:30:22 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ static void	gameover(t_game *game, char *message);
 
 void	free_map(t_game	*game)
 {
+	if (game->plot.map == NULL || game->plot.height == 0)
+		return ;
 	while (game->plot.height > 0)
 	{
 		free(game->plot.map[game->plot.height - 1]);
 		game->plot.height--;
 	}
 	free(game->plot.map);
+	game->plot.map = NULL;
 	return ;
 }
 
@@ -37,7 +40,7 @@ void	endgame(char *message, t_game *game, enum e_state i)
 	{
 		free_map(game);
 		printf(RED"Error\n%s\n"ENDC, message);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	destroy_image(game);
 	free_map(game);
@@ -49,7 +52,7 @@ void	endgame(char *message, t_game *game, enum e_state i)
 void	print_exit_err_message(char *message)
 {
 	printf(RED"Error\n%s\n"ENDC, message);
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 static void	gameover(t_game *game, char *message)
@@ -58,5 +61,6 @@ static void	gameover(t_game *game, char *message)
 	destroy_image(game);
 	free_map(game);
 	free(game->mlx_pointer);
-	exit(0);
+	game->mlx_pointer = NULL;
+	exit(EXIT_SUCCESS);
 }

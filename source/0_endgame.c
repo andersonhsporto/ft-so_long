@@ -6,7 +6,7 @@
 /*   By: anhigo-s <anhigo-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 01:23:05 by anhigo-s          #+#    #+#             */
-/*   Updated: 2024/06/01 20:08:39 by anhigo-s         ###   ########.fr       */
+/*   Updated: 2024/06/02 22:30:34 by anhigo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	endgame(char *message, t_game *game, enum e_state i)
 	else if (i == map_char_error) {
 		free_map(game);
 		printf(RED"Error\n%s\n"ENDC, message);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	destroy_image(game);
 	free_map(game);
@@ -65,7 +65,7 @@ void	endgame(char *message, t_game *game, enum e_state i)
 void	print_exit_err_message(char *message)
 {
 	printf(RED"Error\n%s\n"ENDC, message);
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 static void	gameover(t_game *game, char *message)
@@ -74,5 +74,5 @@ static void	gameover(t_game *game, char *message)
 	destroy_image(game);
 	free_map(game);
 	free(game->mlx_pointer);
-	exit(0);
+	exit(EXIT_SUCCESS);
 }
